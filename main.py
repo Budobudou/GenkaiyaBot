@@ -41,7 +41,7 @@ async def on_message(message):
         await message.channel.send("さよならー")
         sys.exit()
     elif message.content == 'gen!help':
-        helpcmd = f"限界やBot コマンドリスト\ngen!help 今実行したコマンドや...\ngen!ping Pingを測るコマンドや...\ngen!license ライセンス情報を表示するや...\n\nバージョン情報:{Version}"
+        helpcmd = f"限界やBot コマンドリスト\n`gen!help` 今実行したコマンドや...\n`gen!ping` Pingを測るコマンドや...\n`gen!license` ライセンス情報を表示するや...\n`gen!add [メンション]` 指定されたユーザーの全てのメッセージを限界にするコマンドや... \n\nバージョン情報:{Version}"
         await message.channel.send(helpcmd)
     elif message.content[:7] == "gen!add":
         # User add transaction.
