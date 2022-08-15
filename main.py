@@ -12,7 +12,7 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
-    if '限界' in message.content:
+    if all(x in message.content for x in ('限界', 'げんかい', 'genkai', 'limit')):
         await message.add_reaction("<genkaiya:1003377706521600042>")
     elif message.content == '!ping':
         raw_ping = client.latency
