@@ -1,5 +1,5 @@
 import discord
-
+import MeCab
 client = discord.Client()
 Token = "Your Token"
 
@@ -12,11 +12,14 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
-    if '限界' in message.content:
+    if isGenkaiya(message.content):
         await message.add_reaction("<genkaiya:1003377706521600042>")
     elif message.content == '!ping':
         raw_ping = client.latency
         ping = round(raw_ping * 1000)
         await message.reply("Pong!\nBotのPing値は" + str(ping) + "msです。")
+
+def isGenkaiya(text):
+    return ("限界" in MeCab.Tagger("-Owakati").parse(text).split())
 
 client.run("Token")
