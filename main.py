@@ -18,5 +18,7 @@ async def on_message(message):
         raw_ping = client.latency
         ping = round(raw_ping * 1000)
         await message.reply("Pong!\nBotのPing値は" + str(ping) + "msです。")
+    elif message.content == '!get'
+        await message.reply("Get Genkaiya!: https://github.com/brain-hackers/README/blob/main/assets.md")
 
 client.run("Token")
