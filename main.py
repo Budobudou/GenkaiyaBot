@@ -1,4 +1,3 @@
-from tokenize import Token
 import discord,sys
 
 client = discord.Client()
