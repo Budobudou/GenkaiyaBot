@@ -38,7 +38,7 @@ async def on_message(message):
         ping = round(raw_ping * 1000)
         await message.reply("Pong!\nBotのPing値は" + str(ping) + "msです。")
     elif message.content == 'gen!license':
-        await message.reply("限界やちゃんは Brain-Hackers により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
+        await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
         if str(message.author.id) == bot_owner_id:
             await message.reply("さよならー")
