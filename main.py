@@ -1,8 +1,11 @@
+from tokenize import Token
 import discord,sys
 
 client = discord.Client()
 # Token file read.
-Token = open('token.txt', 'r').read()
+setting = open('setting.txt', 'r').readlines()
+Token = setting[0]
+bot_owner_id = setting[1]
 Version = "1.0 (Developer Preview)"
 Genkaiya_emoji = "<:genkaiya:1008703726405562474>"
 
@@ -38,8 +41,11 @@ async def on_message(message):
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは Brain-Hackers により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
-        await message.channel.send("さよならー")
-        sys.exit()
+        if str(message.author.id) == bot_owner_id:
+            await message.reply("さよならー")
+            sys.exit()
+        else:
+            await message.reply("権限がないんや...")
     elif message.content == 'gen!help':
         helpcmd = f"限界やBot コマンドリスト\n`gen!help` 今実行したコマンドや...\n`gen!ping` Pingを測るコマンドや...\n`gen!license` ライセンス情報を表示するや...\n`gen!add [メンション]` 指定されたユーザーの全てのメッセージを限界にするコマンドや... \n\nバージョン情報:{Version}"
         await message.channel.send(helpcmd)
