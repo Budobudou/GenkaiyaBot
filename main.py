@@ -20,5 +20,7 @@ async def on_message(message):
         await message.reply("Pong!\nBotのPing値は" + str(ping) + "msです。")
     elif message.content == '!get'
         await message.reply("Get Genkaiya!: https://github.com/brain-hackers/README/blob/main/assets.md")
+    elif message.content == '!license'
+        await message.reply("限界やちゃんは Brain-Hackers により、Creative Commons BY-SA 4.0 でライセンスされています。\n")
 
 client.run("Token")
