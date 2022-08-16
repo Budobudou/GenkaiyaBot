@@ -36,7 +36,7 @@ async def on_message(message):
     elif message.content == 'gen!ping':
         raw_ping = client.latency
         ping = round(raw_ping * 1000)
-        await message.reply("Pong!\nBotのPing値は" + str(ping) + "msです。")
+        await message.reply("BotのPing値は" + str(ping) + "msや...")
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
