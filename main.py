@@ -9,7 +9,12 @@ Token = setting[0]
 Version = "1.1"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1000607546274488452"
-
+@tasks.loop(seconds=60)
+async def loop():
+    # 現在の時刻
+    now = datetime.now().strftime('%H:%M')
+    print(now)
+loop.start()
 @client.event
 async def on_ready():
     print("起動しました")
