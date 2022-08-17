@@ -21,7 +21,7 @@ try:
       global gencount
     try:
       gencount = pickle.load(f)
-    except EOFError: Ran out of input:
+    except EOFError:
       global gencount 
       gencount = 0
 except FileNotFoundError:
