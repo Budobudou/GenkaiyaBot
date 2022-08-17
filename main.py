@@ -6,7 +6,7 @@ setting = open('setting.txt', 'r').readlines()
 Token = setting[0]
 bot_owner_id = setting[1]
 Version = "1.0 (Developer Preview)"
-Genkaiya_emoji = "<:genkaiya:1008703726405562474>"
+Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 
 @client.event
 async def on_ready():
@@ -61,5 +61,5 @@ async def on_message(message):
             user_id_mention = "<@"+str(message.author.id)+">"
         user_data_text_write.write(str(server_id)+","+str(user_id)+"\n")
         user_data_text_write.close()
-        await message.reply(user_id_mention+"を追加しました。")
+        await message.reply(user_id_mention+"を追加したんや...")
 client.run(Token)
