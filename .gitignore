@@ -2,3 +2,5 @@
 setting.txt
 # User Data file
 user.txt
+# Gencount Data
+gencount.pickle
