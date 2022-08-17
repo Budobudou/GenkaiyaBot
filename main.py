@@ -7,12 +7,14 @@ Token = setting[0]
 bot_owner_id = setting[1]
 Version = "1.0 (Developer Preview)"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
+startnotify_channel = "1000607545976696929"
 
 @client.event
 async def on_ready():
     print("起動しました")
-    await client.change_presence(activity=discord.Game(name="限界やちゃん"))
-
+    await client.change_presence(activity=discord.Game(name="限界リアクション"))
+    notify = await client.fetch_channel(startnotify_channel)
+    await notify.send("起動したや...")
 @client.event
 async def on_message(message):
     if message.author.bot:
