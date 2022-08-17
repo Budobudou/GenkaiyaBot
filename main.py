@@ -71,7 +71,7 @@ async def on_message(message):
         user_data_text_write.write(str(server_id)+","+str(user_id)+"\n")
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
-    elif message.content == 'gen_reboot':
+    elif message.content == 'gen!reboot':
         await message.reply('再起動してるんや...')
         python = sys.executable
         os.execl(python,python, * sys.argv)
