@@ -1,5 +1,5 @@
 print("起動してるんや...")
-import sys,os,random,discord,asyncio
+import sys,os,random,discord,asyncio,pickle
 import pandas as pd
 from datetime import datetime
 from discord.ext import tasks
@@ -10,6 +10,10 @@ Token = setting[0]
 Version = "1.1"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1000607546274488452"
+# 限界カウンター Start
+with open('gencount.pickle', 'rb') as f:
+    global gencount
+    gencount = pickle.load(f)
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
@@ -42,6 +46,11 @@ async def on_message(message):
         count += 1
     if '限界' in message.content:
         await message.add_reaction(Genkaiya_emoji)
+        global gencount
+        gencount += 1
+        with open("gencount.pickle","wb") as f:
+            pickle.dump(gencount)
+            print(gencount)
     elif message.content == 'gen!ping':
         raw_ping = client.latency
         ping = round(raw_ping * 1000)
