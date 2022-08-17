@@ -23,7 +23,6 @@ try:
     try:
       gencount = pickle.load(f)
     except EOFError:
-      global gencount 
       gencount = 0
 except FileNotFoundError:
     with open("gencount.pickle","wb") as f:
