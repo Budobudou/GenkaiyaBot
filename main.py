@@ -21,10 +21,12 @@ try:
       global gencount
       gencount = pickle.load(f)
 except FileNotFoundError:
-    global gencount
     gencount = 0
     with open("gencount.pickle","wb") as f:
         pickle.dump(gencount, f)
+        print("gencount ファイルを作成したから再起動するや...")
+        python = sys.executable
+        os.execl(python,python, * sys.argv)
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
