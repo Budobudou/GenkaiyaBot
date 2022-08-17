@@ -80,7 +80,10 @@ async def on_message(message):
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
     elif message.content == 'gen!reboot':
-        await message.reply('再起動してるんや...')
-        python = sys.executable
-        os.execl(python,python, * sys.argv)
+        if message.author.guild_permissions.administrator:
+            await message.reply('再起動してるんや...')
+            python = sys.executable
+            os.execl(python,python, * sys.argv)
+        else:
+            await message.reply("権限がないんや...")
 client.run(Token)
