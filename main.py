@@ -1,5 +1,5 @@
 import discord,sys
-
+print("起動してるんや...")
 client = discord.Client()
 # Token file read.
 setting = open('setting.txt', 'r').readlines()
@@ -45,9 +45,16 @@ async def on_message(message):
             sys.exit()
         else:
             await message.reply("権限がないんや...")
+    # ヘルプ コマンド
     elif message.content == 'gen!help':
-        helpcmd = f"限界やBot コマンドリスト\n`gen!help` 今実行したコマンドや...\n`gen!ping` Pingを測るコマンドや...\n`gen!license` ライセンス情報を表示するや...\n`gen!add [メンション]` 指定されたユーザーの全てのメッセージを限界にするコマンドや... \n\nバージョン情報:{Version}"
-        await message.channel.send(helpcmd)
+        embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...",color=ffffffff")
+        embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
+        embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
+        embed.add_field(name="gen!license",value="ライセンス情報を表示するや...",inline=True)
+        embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
+        embed.set_footer(text=f"バージョン情報:{Version}"
+        embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+        await message.channel.send(embed=embed)
     elif message.content[:7] == "gen!add":
         # User add transaction.
         user_data_text_write = open('user.txt', 'a')
