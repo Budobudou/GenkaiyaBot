@@ -42,7 +42,7 @@ async def on_message(message):
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
-        if str(message.author.id) == bot_owner_id:
+        if str(message.author.id) == str(bot_owner_id):
             await message.reply("さよならー")
             sys.exit()
         else:
