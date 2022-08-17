@@ -3,7 +3,6 @@ import sys
 import os
 import random
 import discord
-import asyncio
 import pickle
 import pandas as pd
 from datetime import datetime
