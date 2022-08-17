@@ -36,13 +36,13 @@ async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
     print(now)
-    if now == '23:14':
+    if now == '23:59':
         ch_name = "限界や出現数"
         for channel in client.get_all_channels():
             if channel.name == ch_name:
                 try:
                     global gencount
-                    await channel.send(f"今日の全世界での限界やちゃん出現数は「{gencount}」や...！\n明日はどうなるかや...おやすみ")
+                    await channel.send(f"今日の全世界での限界やちゃん出現数は{gencount}回や...！\n明日はどうなるかや...おやすみや...")
                     with open("gencount.pickle","wb") as f:
                         gencount = 0
                         pickle.dump(gencount, f)
