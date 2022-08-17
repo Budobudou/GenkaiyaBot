@@ -63,9 +63,10 @@ async def on_message(message):
         count += 1
     if '限界' in message.content:
         await message.add_reaction(Genkaiya_emoji)
-        global gencount
-        gencount += 1
+
         with open("gencount.pickle","wb") as f:
+            global gencount
+            gencount += 1
             pickle.dump(gencount)
             print(gencount)
     elif message.content == 'gen!ping':
