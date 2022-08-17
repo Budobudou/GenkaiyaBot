@@ -25,6 +25,8 @@ MYTokenwOTgzXOV8MzMzNGI3Ng.GINUGJG.9XxcMEzV1ZsXWpNsA_n6jPzGKathY58LZj_JQ #YourTo
 
 `gen!exit` - ボットを終了します(Botのオーナー以外は実行できません)
 
+`gen!random` - 限界やちゃんの画像をランダムに表示する
+
 ## 限界やちゃんのライセンス
 
 限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。

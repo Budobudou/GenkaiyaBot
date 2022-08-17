@@ -1,4 +1,6 @@
 import discord,sys
+from pandas import pd
+import random
 print("起動してるんや...")
 client = discord.Client()
 # Token file read.
@@ -45,6 +47,11 @@ async def on_message(message):
             sys.exit()
         else:
             await message.reply("権限がないんや...")
+    elif message.content == 'gen!random':
+        df = pd.read_csv('genkaiya.csv')
+        images = df['url']
+        image_url = random.choice(images)
+        await message.reply(image_url)
     # ヘルプ コマンド
     elif message.content == 'gen!help':
         embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...")
@@ -52,6 +59,7 @@ async def on_message(message):
         embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
         embed.add_field(name="gen!license",value="ライセンス情報を表示するや...",inline=True)
         embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
+        embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
         embed.set_footer(text=f"バージョン情報:{Version}")
         embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
         await message.channel.send(embed=embed)
