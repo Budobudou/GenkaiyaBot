@@ -47,12 +47,12 @@ async def on_message(message):
             await message.reply("権限がないんや...")
     # ヘルプ コマンド
     elif message.content == 'gen!help':
-        embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...",color=ffffffff")
+        embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...")
         embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
         embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
         embed.add_field(name="gen!license",value="ライセンス情報を表示するや...",inline=True)
         embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
-        embed.set_footer(text=f"バージョン情報:{Version}"
+        embed.set_footer(text=f"バージョン情報:{Version}")
         embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
         await message.channel.send(embed=embed)
     elif message.content[:7] == "gen!add":
