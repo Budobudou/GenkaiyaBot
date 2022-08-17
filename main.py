@@ -36,6 +36,18 @@ async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
     print(now)
+    if now == '23:10':
+        ch_name = "限界や出現数"
+        for channel in client.get_all_channels():
+            if channel.name == ch_name:
+                try:
+                    global gencount
+                    await channel.send(f"今日の全世界での限界やちゃん出現数は「{gencounter}」や...！\n明日はどうなるかや...おやすみ")
+                    with open("gencount.pickle","wb") as f:
+                        gencount = 0
+                        pickle.dump(gencount, f)
+                except discord.errors.Forbidden:
+                    pass
 loop.start()
 @client.event
 async def on_ready():
