@@ -42,7 +42,7 @@ async def loop():
             if channel.name == ch_name:
                 try:
                     global gencount
-                    await channel.send(f"今日の全世界での限界やちゃん出現数は「{gencounter}」や...！\n明日はどうなるかや...おやすみ")
+                    await channel.send(f"今日の全世界での限界やちゃん出現数は「{gencount}」や...！\n明日はどうなるかや...おやすみ")
                     with open("gencount.pickle","wb") as f:
                         gencount = 0
                         pickle.dump(gencount, f)
