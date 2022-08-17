@@ -1,7 +1,5 @@
-import discord
-import sys,os
+import sys,os,random,discord
 import pandas as pd
-import random
 print("起動してるんや...")
 client = discord.Client()
 # Token file read.
