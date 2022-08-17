@@ -19,7 +19,11 @@ startnotify_channel = "1000607546274488452"
 try:
     with open('gencount.pickle', 'rb') as f:
       global gencount
+    try:
       gencount = pickle.load(f)
+    except EOFError: Ran out of input:
+      global gencount 
+      gencount = 0
 except FileNotFoundError:
     with open("gencount.pickle","wb") as f:
         gencount = 0
