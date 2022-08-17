@@ -21,8 +21,8 @@ try:
       global gencount
       gencount = pickle.load(f)
 except FileNotFoundError:
-    gencount = 0
     with open("gencount.pickle","wb") as f:
+        gencount = 0
         pickle.dump(gencount, f)
         print("gencount ファイルを作成したから再起動するや...")
         python = sys.executable
