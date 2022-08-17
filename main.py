@@ -5,9 +5,8 @@ import random
 print("起動してるんや...")
 client = discord.Client()
 # Token file read.
-setting = open('setting.txt', 'r').readlines()
+setting = open('token.txt', 'r').readlines()
 Token = setting[0]
-bot_owner_id = setting[1]
 Version = "1.0 (Developer Preview)"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 
@@ -43,7 +42,7 @@ async def on_message(message):
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
-        if str(message.author.id) == str(bot_owner_id):
+        if message.author.guild_permissions.administrator:
             await message.reply("さよならー")
             sys.exit()
         else:
