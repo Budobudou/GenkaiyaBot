@@ -1,5 +1,10 @@
 print("起動してるんや...")
-import sys,os,random,discord,asyncio,pickle
+import sys
+import os
+import random
+import discord
+import asyncio
+import pickle
 import pandas as pd
 from datetime import datetime
 from discord.ext import tasks
