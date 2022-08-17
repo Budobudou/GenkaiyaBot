@@ -1,5 +1,6 @@
-import discord,sys
-from pandas import pd
+import discord
+import sys
+import pandas as pd
 import random
 print("起動してるんや...")
 client = discord.Client()
