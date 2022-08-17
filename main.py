@@ -67,7 +67,7 @@ async def on_message(message):
         with open("gencount.pickle","wb") as f:
             global gencount
             gencount += 1
-            pickle.dump(gencount)
+            pickle.dump(gencount, f)
             print(gencount)
     elif message.content == 'gen!ping':
         raw_ping = client.latency
