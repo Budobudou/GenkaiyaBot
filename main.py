@@ -1,6 +1,7 @@
-import sys,os,random,discord
-import pandas as pd
 print("起動してるんや...")
+import sys,os,random,discord,asyncio
+import pandas as pd
+from datetime import datetime
 client = discord.Client()
 # Token file read.
 setting = open('token.txt', 'r').readlines()
