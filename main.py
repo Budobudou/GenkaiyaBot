@@ -1,5 +1,5 @@
 import discord
-import sys
+import sys,os
 import pandas as pd
 import random
 print("起動してるんや...")
