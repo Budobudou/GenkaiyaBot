@@ -16,9 +16,15 @@ Version = "1.1"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1000607546274488452"
 # 限界カウンター Start
-with open('gencount.pickle', 'rb') as f:
+try:
+    with open('gencount.pickle', 'rb') as f:
+      global gencount
+      gencount = pickle.load(f)
+except FileNotFoundError:
     global gencount
-    gencount = pickle.load(f)
+    gencount = 0
+    with open("gencount.pickle","wb") as f:
+        pickle.dump(gencount, f)
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
