@@ -64,7 +64,7 @@ async def on_message(message):
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
         if message.author.guild_permissions.administrator:
-            await message.reply("さよならー")
+            await message.reply("さよならや...")
             sys.exit()
         else:
             await message.reply("権限がないんや...")
