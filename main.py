@@ -20,10 +20,10 @@ global gencount
 try:
     with open('gencount.pickle', 'rb') as f:
       global gencount
-    try:
-      gencount = pickle.load(f)
-    except EOFError:
-      gencount = 0
+      try:
+          gencount = pickle.load(f)
+      except EOFError:
+          gencount = 0
 except FileNotFoundError:
     with open("gencount.pickle","wb") as f:
         gencount = 0
