@@ -23,7 +23,7 @@ MYTokenwOTgzXOV8MzMzNGI3Ng.GINUGJG.9XxcMEzV1ZsXWpNsA_n6jPzGKathY58LZj_JQ #YourTo
 
 `gen!add @メンション` - 任意の発言をした人にリアクションを追加します
 
-`gen!exit` - ボットを終了します( Bot のオーナー以外は実行できません)
+`gen!exit` - ボットを終了します(Botのオーナー以外は実行できません)
 
 ## 限界やちゃんのライセンス
 
