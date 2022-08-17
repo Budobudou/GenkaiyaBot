@@ -4,13 +4,12 @@
 
 ## How to use
 
-1. `setting.txt` を開き、以下のように記述する
+1. `token.txt` を開き、以下のように記述する
 1. `main.py` を実行する
 1. Discord で「限界」と打つ
 
 ```text
 MYTokenwOTgzXOV8MzMzNGI3Ng.GINUGJG.9XxcMEzV1ZsXWpNsA_n6jPzGKathY58LZj_JQ #YourToken
-997588139235360958 #OwnerUserID
 ```
 
 ## Command
@@ -23,7 +22,9 @@ MYTokenwOTgzXOV8MzMzNGI3Ng.GINUGJG.9XxcMEzV1ZsXWpNsA_n6jPzGKathY58LZj_JQ #YourTo
 
 `gen!add @メンション` - 任意の発言をした人にリアクションを追加します
 
-`gen!exit` - ボットを終了します(Botのオーナー以外は実行できません)
+`gen!exit` - ボットを終了します(サーバーの管理者以外は実行できません)
+
+`gen!random` - 限界やちゃんの画像をランダムに表示する
 
 ## 限界やちゃんのライセンス
 

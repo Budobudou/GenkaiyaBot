@@ -1,10 +1,12 @@
-import discord,sys
+import discord
+import sys
+import pandas as pd
+import random
 print("起動してるんや...")
 client = discord.Client()
 # Token file read.
-setting = open('setting.txt', 'r').readlines()
+setting = open('token.txt', 'r').readlines()
 Token = setting[0]
-bot_owner_id = setting[1]
 Version = "1.0 (Developer Preview)"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1000607545976696929"
@@ -42,11 +44,16 @@ async def on_message(message):
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
-        if str(message.author.id) == bot_owner_id:
+        if message.author.guild_permissions.administrator:
             await message.reply("さよならー")
             sys.exit()
         else:
             await message.reply("権限がないんや...")
+    elif message.content == 'gen!random':
+        df = pd.read_csv('genkaiya.csv')
+        images = df['url']
+        image_url = random.choice(images)
+        await message.reply(image_url)
     # ヘルプ コマンド
     elif message.content == 'gen!help':
         embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...")
@@ -54,6 +61,7 @@ async def on_message(message):
         embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
         embed.add_field(name="gen!license",value="ライセンス情報を表示するや...",inline=True)
         embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
+        embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
         embed.set_footer(text=f"バージョン情報:{Version}")
         embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
         await message.channel.send(embed=embed)
