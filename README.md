@@ -34,11 +34,11 @@ MYTokenwOTgzXOV8MzMzNGI3Ng.GINUGJG.9XxcMEzV1ZsXWpNsA_n6jPzGKathY58LZj_JQ #YourTo
 
 ## アップデート情報
 
-#2022/8/15 Version 1.0 Developer Preview
+# 2022/8/15 Version 1.0 Developer Preview
 
 初リリース
 
-2022/8/17 Version 1.1
+# 2022/8/17 Version 1.1
 
 helpコマンドの追加
 
