@@ -9,7 +9,7 @@ setting = open('token.txt', 'r').readlines()
 Token = setting[0]
 Version = "1.1"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
-startnotify_channel = "1000607545976696929"
+startnotify_channel = "1000607546274488452"
 
 @client.event
 async def on_ready():
