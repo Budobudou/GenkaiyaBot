@@ -62,8 +62,8 @@ async def on_ready():
     print("起動しました")
 #    await client.change_presence(activity=discord.Game(name="gen!help"))
     serversuu = len(client.guilds)
-    usersuu = len(client.users)
-    status = random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
+
+    status = random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
     await client.change_presence(activity=discord.Game(name=status))
     notify = await client.fetch_channel(startnotify_channel)
     await notify.send("起動したや...")
@@ -163,6 +163,8 @@ async def on_message(message):
           kekka2 = kekka.stdout.read()
           kekka3 = kekka2.decode("utf-8")
           await message.reply(f'pullってきたわ...\n```\n{kekka3}\n```')
+          python = sys.executable
+          os.execl(python,python, * sys.argv)
         else:
             await message.reply("権限がないんや...")
 client.run(Token)
