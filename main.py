@@ -35,7 +35,7 @@ async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
     print(now)
-    if now == '10:02':
+    if now == '10:05':
         ch_name = "限界や出現数test"
         for channel in client.get_all_channels():
             if channel.name == ch_name:
