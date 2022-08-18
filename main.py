@@ -14,8 +14,6 @@ Token = setting[0]
 Version = "1.1"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1000607546274488452"
-with open("admins.txt") as f:
-    admins = f.read()
 global gencount
 # 限界カウンター Start
 try:
@@ -91,7 +89,7 @@ async def on_message(message):
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
-        if message.author.id in admins:
+        if message.author.guild_permissions.administrator:
             await message.reply("さよならや...")
             sys.exit()
         else:
