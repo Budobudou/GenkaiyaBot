@@ -38,6 +38,10 @@ async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
     print(now)
+    serversuu = len(client.guilds)
+    usersuu = len(client.users)
+    status = random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
+    await client.change_presence(activity=discord.Game(name=status))
     if now == '22:00':
         ch_name = "限界や出現数"
         global gencount
@@ -56,7 +60,7 @@ loop.start()
 @client.event
 async def on_ready():
     print("起動しました")
-    await client.change_presence(activity=discord.Game(name="限界リアクション"))
+    await client.change_presence(activity=discord.Game(name="gen!help"))
     notify = await client.fetch_channel(startnotify_channel)
     await notify.send("起動したや...")
 @client.event
@@ -103,15 +107,29 @@ async def on_message(message):
         await message.reply(image_url)
     # ヘルプ コマンド
     elif message.content == 'gen!help':
-        embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...")
-        embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
-        embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
-        embed.add_field(name="gen!license",value="ライセンス情報を表示するや...",inline=True)
-        embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
-        embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
-        embed.set_footer(text=f"バージョン情報:{Version}")
-        embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-        await message.channel.send(embed=embed)
+        if str(message.author.id) in admins:
+            embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}の**管理者用**コマンド一覧や...")
+            embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
+            embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
+            embed.add_field(name="gen!license",value="ライセンス情報を表示するんや...",inline=True)
+            embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
+            embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
+            embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
+            embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
+            embed.add_field(name="gen!update",value="Botを GitHub から更新するや...",inline=True)
+            embed.set_footer(text=f"バージョン情報:{Version}")
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            await message.channel.send(embed=embed)
+        else:
+            embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...")
+            embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
+            embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
+            embed.add_field(name="gen!license",value="ライセンス情報を表示するんや...",inline=True)
+            embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
+            embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
+            embed.set_footer(text=f"バージョン情報:{Version}")
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            await message.channel.send(embed=embed)
     elif message.content[:7] == "gen!add":
         # User add transaction.
         user_data_text_write = open('user.txt', 'a')
