@@ -175,7 +175,7 @@ async def on_message(message):
           kekka = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
           kekka2 = kekka.stdout.read()
           kekka3 = kekka2.decode("utf-8")
-          await message.reply(f'pullってきたわ...\n```\n{kekka3}\n```ちょっと一回寝てくる、おやすみや...')
+          await message.reply(f'pullってきたや...\n```\n{kekka3}\n```ちょっと一回寝てくる、おやすみや...')
           python = sys.executable
           os.execl(python,python, * sys.argv)
         else:
