@@ -137,7 +137,7 @@ async def on_message(message):
         if str(message.author.id) in admins:
           await message.reply('git pull しているんや...')
           cmd = 'git pull'
-          kekka = subprocess.call(cmd.split())
+          kekka = subprocess.call(cmd.split(),shell=True, stdout=subprocess.PIPE , stderr=subprocess.PIPE ,encoding="utf-8")
           await message.reply('pullってきたわ...')
           await message.reply(f'```\n{kekka}\n```')
         else:
