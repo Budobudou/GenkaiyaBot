@@ -41,8 +41,7 @@ async def loop():
     print(now)
     serversuu = len(client.guilds)
     usersuu = len(client.users)
-    await client.change_presence(activity=discord.Game(name=random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
-))
+    
     if now == '22:00':
         ch_name = "限界や出現数"
         global gencount
@@ -61,7 +60,8 @@ loop.start()
 @client.event
 async def on_ready():
     print("起動しました")
-#    await client.change_presence(activity=discord.Game(name="gen!help"))
+    await client.change_presence(activity=discord.Game(name=random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
+))
     notify = await client.fetch_channel(startnotify_channel)
     await notify.send("起動したや...")
 @client.event
