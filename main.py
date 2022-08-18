@@ -4,6 +4,7 @@ import os
 import random
 import discord
 import pickle
+import subprocess
 import pandas as pd
 from datetime import datetime
 from discord.ext import tasks
@@ -130,6 +131,15 @@ async def on_message(message):
             await message.reply('再起動してるんや...')
             python = sys.executable
             os.execl(python,python, * sys.argv)
+        else:
+            await message.reply("権限がないんや...")
+    elif message.content == 'gen!update':
+        if str(message.author.id) in admins:
+          await message.reply('git pull しているんや...')
+          cmd = 'git pull'
+          kekka = subprocess.call(cmd.split())
+          await message.reply('pullってきたわ...')
+          await message.reply(f'```\n{kekka}\n```')
         else:
             await message.reply("権限がないんや...")
 client.run(Token)
