@@ -33,6 +33,7 @@ except FileNotFoundError:
         print("gencount ファイルを作成したから再起動するや...")
         python = sys.executable
         os.execl(python,python, * sys.argv)
+        
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
@@ -40,8 +41,8 @@ async def loop():
     print(now)
     serversuu = len(client.guilds)
     usersuu = len(client.users)
-    status2 = random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
-    await client.change_presence(activity=discord.Game(name=status2))
+    await client.change_presence(activity=discord.Game(name=random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
+))
     if now == '22:00':
         ch_name = "限界や出現数"
         global gencount
