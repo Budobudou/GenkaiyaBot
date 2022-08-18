@@ -90,7 +90,7 @@ async def on_message(message):
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
-        if message.author.id in admins:
+        if str(message.author.id) in admins:
             await message.reply("さよならや...")
             sys.exit()
         else:
@@ -126,7 +126,7 @@ async def on_message(message):
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
     elif message.content == 'gen!reboot':
-        if message.author.id in admins:
+        if str(message.author.id) in admins:
             await message.reply('再起動してるんや...')
             python = sys.executable
             os.execl(python,python, * sys.argv)
