@@ -117,6 +117,8 @@ async def on_message(message):
             embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
             embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
             embed.add_field(name="gen!update",value="Botを GitHub から更新するや...",inline=True)
+            embed.add_field(name="gen!eval [コード]",value="Python コードを実行するんや...",inline=True)
+            embed.add_field(name="gen!shell [コマンド]",value="Linux コマンドを実行するんや...",inline=True)
             embed.set_footer(text=f"バージョン情報:{Version}")
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
             await message.channel.send(embed=embed)
@@ -144,6 +146,21 @@ async def on_message(message):
         user_data_text_write.write(str(server_id)+","+str(user_id)+"\n")
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
+    elif message.content.startswith("gen!eval "):
+       if str(message.author.id) in admins:
+           eva = message.content[8:]
+           await eval(eva)
+       else:
+           await message.channel.send('権限がないんや...') 
+    elif message.content.startswith("gen!shell "):
+       if str(message.author.id) in admins:
+           cmd = message.content[9:]
+           kekka = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
+           kekka2 = kekka.stdout.read()
+           kekka3 = kekka2.decode("utf-8")
+           await message.reply(f'```\n{kekka3}\n```')
+       else:
+           await message.channel.send('権限がないんや...') 
     elif message.content == 'gen!reboot':
         if str(message.author.id) in admins:
             await message.reply('再起動してるんや...')
@@ -158,7 +175,7 @@ async def on_message(message):
           kekka = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
           kekka2 = kekka.stdout.read()
           kekka3 = kekka2.decode("utf-8")
-          await message.reply(f'pullってきたわ...\n```\n{kekka3}\n```')
+          await message.reply(f'pullってきたわ...\n```\n{kekka3}\n```ちょっと一回寝てくる、おやすみや...')
           python = sys.executable
           os.execl(python,python, * sys.argv)
         else:
