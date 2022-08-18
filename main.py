@@ -14,6 +14,8 @@ Token = setting[0]
 Version = "1.1"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1000607546274488452"
+with open("./admins.txt") as f:
+    admins = f.read()
 global gencount
 # 限界カウンター Start
 try:
@@ -76,7 +78,6 @@ async def on_message(message):
         count += 1
     if '限界' in message.content or 'げんかい' in message.content or 'genkai' in message.content or 'limit' in message.content:
         await message.add_reaction(Genkaiya_emoji)
-
         with open("gencount.pickle","wb") as f:
             global gencount
             gencount += 1
@@ -89,7 +90,7 @@ async def on_message(message):
     elif message.content == 'gen!license':
         await message.reply("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
     elif message.content == 'gen!exit':
-        if message.author.guild_permissions.administrator:
+        if message.author.id in admins:
             await message.reply("さよならや...")
             sys.exit()
         else:
@@ -125,7 +126,7 @@ async def on_message(message):
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
     elif message.content == 'gen!reboot':
-        if message.author.guild_permissions.administrator:
+        if message.author.id in admins:
             await message.reply('再起動してるんや...')
             python = sys.executable
             os.execl(python,python, * sys.argv)
