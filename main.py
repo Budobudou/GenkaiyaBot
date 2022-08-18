@@ -138,7 +138,7 @@ async def on_message(message):
           await message.reply('git pull しているんや...')
           cmd = 'git pull'
           kekka = subprocess.check_output(cmd.split(),shell=True,encoding="utf-8")
-          await message.reply(f'pullってきたわ...\n```\n{kekka}\n```)
+          await message.reply(f'pullってきたわ...\n```\n{kekka}\n```')
         else:
             await message.reply("権限がないんや...")
 client.run(Token)
