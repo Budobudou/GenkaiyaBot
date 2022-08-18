@@ -40,8 +40,8 @@ async def loop():
     print(now)
     serversuu = len(client.guilds)
     usersuu = len(client.users)
-    status = random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
-    await client.change_presence(activity=discord.Game(name=status))
+    status2 = random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...",f"{usersuu}人と戯れてるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
+    await client.change_presence(activity=discord.Game(name=status2))
     if now == '22:00':
         ch_name = "限界や出現数"
         global gencount
