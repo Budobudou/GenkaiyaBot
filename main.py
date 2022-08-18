@@ -45,8 +45,8 @@ async def loop():
                 except discord.errors.Forbidden:
                     pass
                 with open("gencount.pickle","wb") as f:
-                    gencount = 0
-                    pickle.dump(gencount, f)
+        gencount = 0
+        pickle.dump(gencount, f)
 
 loop.start()
 @client.event
