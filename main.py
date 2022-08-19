@@ -15,7 +15,7 @@ setting = open('token.txt', 'r').readlines()
 Token = setting[0]
 Version = "1.2(Developer Preview)"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
-startnotify_channel = "1000607546274488452"
+startnotify_channel = "1010162569799028869"
 with open("./admins.txt") as f:
     admins = f.read()
 global gencount
