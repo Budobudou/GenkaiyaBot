@@ -4,6 +4,7 @@ import os
 import random
 import discord
 import pickle
+import asyncio
 import subprocess
 import pandas as pd
 from datetime import datetime
@@ -107,28 +108,18 @@ async def on_message(message):
         await message.reply(image_url)
     # ヘルプ コマンド
     elif message.content == 'gen!help':
-        if str(message.author.id) in admins:
-            embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}の**管理者用**コマンド一覧や...")
-            embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
-            embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
-            embed.add_field(name="gen!license",value="ライセンス情報を表示するんや...",inline=True)
-            embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
-            embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
-            embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
-            embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
-            embed.add_field(name="gen!update",value="Botを GitHub から更新するや...",inline=True)
-            embed.add_field(name="gen!eval [コード]",value="Python コードを実行するんや...",inline=True)
-            embed.add_field(name="gen!shell [コマンド]",value="Linux コマンドを実行するんや...",inline=True)
-            embed.set_footer(text=f"バージョン情報:{Version}")
-            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            await message.channel.send(embed=embed)
-        else:
             embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...")
             embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
             embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
             embed.add_field(name="gen!license",value="ライセンス情報を表示するんや...",inline=True)
             embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
             embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
+            if str(message.author.id) in admins:
+                embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
+                embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
+                embed.add_field(name="gen!update",value="Botを GitHub から更新するや...",inline=True)
+                embed.add_field(name="gen!eval [コード]",value="Python コードを実行するんや...",inline=True)
+                embed.add_field(name="gen!shell [コマンド]",value="Linux コマンドを実行するんや...",inline=True)
             embed.set_footer(text=f"バージョン情報:{Version}")
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
             await message.channel.send(embed=embed)
