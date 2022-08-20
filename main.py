@@ -113,8 +113,9 @@ async def on_message(message):
             embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
             embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
             embed.add_field(name="gen!license",value="ライセンス情報を表示するんや...",inline=True)
-            embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
-            embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
+            embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするや...",inline=True)
+            embed.add_field(name="gen!remove",value="自分のメッセージを限界にするのをやめるんや...",inline=True)
+            embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するや...",inline=True)
             embed.add_field(name="gen!timer",value="秒数の分だけ時間を測るや...",inline=True)
             embed.add_field(name="gen!channel",value="特殊なチャンネルリストを表示するや...",inline=True)
             if str(message.author.id) in admins:
@@ -141,8 +142,14 @@ async def on_message(message):
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
     elif message.content == "gen!remove":
-        removeid = message.guild.id","message.author.id
-        
+        with open("./user.txt") as f:
+            rem = f.read()
+            f.close
+        removeid = f"{message.guild.id},{message.author.id}"
+        deleted = re.sub(str(removeid),"", rem, 1)
+        with open("./user.txt","w") as f:
+            f.write(deleted)
+            f.close
     elif message.content.startswith("gen!eval "):
        if str(message.author.id) in admins:
            eva = message.content[8:]
