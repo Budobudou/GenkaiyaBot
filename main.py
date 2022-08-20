@@ -111,7 +111,7 @@ async def on_message(message):
     elif message.content == 'gen!help':
             embed = discord.Embed(title=f"限界やBot{Genkaiya_emoji}のコマンド一覧や...")
             embed.add_field(name="gen!help", value="今実行したコマンドや...", inline=True)
-            embed.add_field(name="gen!ping",value="Pingを測るコマンドや...",inline=True)
+            embed.add_field(name="gen!ping",value="Pingを測るや...",inline=True)
             embed.add_field(name="gen!license",value="ライセンス情報を表示するんや...",inline=True)
             embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするや...",inline=True)
             embed.add_field(name="gen!remove",value="自分のメッセージを限界にするのをやめるんや...",inline=True)
@@ -194,6 +194,7 @@ async def on_message(message):
           await new_channel.edit(position=0)
           await message.channel.edit(position=0)
           channel = client.get_channel(new_channel)
+            
     elif message.content.startswith("gen!timer "):
           timer = int(message.content[10:])
           await message.channel.send(f"タイマーを{timer}秒にセットしたや...")
