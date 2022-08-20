@@ -3,8 +3,8 @@ import sys
 import os
 import random
 import discord
-import pickle
 import asyncio
+import pickle
 import subprocess
 import pandas as pd
 from datetime import datetime
@@ -14,6 +14,7 @@ client = discord.Client()
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
 Version = "1.2(Developer Preview)"
+support_server_link = "https://discord.com/invite/NjBheceZRB"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1010162569799028869"
 with open("./admins.txt") as f:
@@ -114,6 +115,8 @@ async def on_message(message):
             embed.add_field(name="gen!license",value="ライセンス情報を表示するんや...",inline=True)
             embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするコマンドや...",inline=True)
             embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するコマンドや...",inline=True)
+            embed.add_field(name="gen!timer",value="秒数の分だけ時間を測るや...",inline=True)
+            embed.add_field(name="gen!channel",value="特殊なチャンネルリストを表示するや...",inline=True)
             if str(message.author.id) in admins:
                 embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
                 embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
@@ -137,6 +140,9 @@ async def on_message(message):
         user_data_text_write.write(str(server_id)+","+str(user_id)+"\n")
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
+    elif message.content == "gen!remove":
+        removeid = message.guild.id","message.author.id
+        
     elif message.content.startswith("gen!eval "):
        if str(message.author.id) in admins:
            eva = message.content[8:]
@@ -171,4 +177,24 @@ async def on_message(message):
           os.execl(python,python, * sys.argv)
         else:
             await message.reply("権限がないんや...")
+    elif message.channel.topic == "チャンネル作成":
+          new_channel = await create_channel(message, channel_name=message.content)
+          text = f"{new_channel.mention} を作成しました"
+          await message.channel.send(text)
+          channel = client.get_channel(new_channel.id)
+          member = channel.guild.get_member(message.author.id)
+          await channel.set_permissions(member, manage_channels=True, manage_messages=True)
+          await new_channel.edit(position=0)
+          await message.channel.edit(position=0)
+          channel = client.get_channel(new_channel)
+    elif message.content.startswith("gen!timer "):
+          timer = int(message.content[10:])
+          await message.channel.send(f"タイマーを{timer}秒にセットしたや...")
+          await asyncio.sleep(timer)
+          replymsg = f'{message.author.mention} {timer}秒経ったや... これ以上待つのは限界や...'
+          await message.reply(replymsg)
+       if message.content == 'gen!channel':
+            embed=discord.Embed(title=f"限界やBot{Genkaiya_emoji}特殊チャンネル", description="※これらの機能はコマンドではありません。指示に従ってチャンネルを作成してください。", color=0xffffff)
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            embed.add_field(name="チャンネル作成機能", value="任意のチャンネルのトピックを **チャンネル作成** に設定してください。そこに発言されるとチャンネルが作成されます。\nチャンネル作成用にカテゴリーを作成してください", inline=True)
 client.run(Token)
