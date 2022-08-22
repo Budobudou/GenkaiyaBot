@@ -83,7 +83,7 @@ async def on_message(message):
             if user_id == int(data[1]):
                 await message.add_reaction(Genkaiya_emoji)
         count += 1
-    if '限界' in message.content or 'げんかい' in message.content or 'genkai' in message.content or 'limit' in message.content:
+    if '限界' in message.content or 'げんかい' in message.content or 'genkai' in message.content or 'limit' in message.content or '無理' in message.content or '極限' in message.content or '駄目' in message.content or 'ダメ':
         await message.add_reaction(Genkaiya_emoji)
         with open("gencount.pickle","wb") as f:
             global gencount
@@ -184,15 +184,15 @@ async def on_message(message):
           os.execl(python,python, * sys.argv)
         else:
             await message.reply("権限がないんや...")
-    elif message.channel.topic == "チャンネル作成":
-          new_channel = await message.guild.create_text_channel(name=message.content)
-          text = f"{new_channel.mention} を作成しました"
-          await message.channel.send(text)
-          channel = client.get_channel(new_channel.id)
-          await channel.set_permissions(message.author, manage_channels=True, manage_messages=True)
-          await new_channel.edit(position=0)
-          await message.channel.edit(position=0)
-          channel = client.get_channel(new_channel)
+#    elif message.channel.topic == "チャンネル作成":
+#          new_channel = await message.guild.create_text_channel(name=message.content)
+#          text = f"{new_channel.mention} を作成したや..."
+#          await message.reply(text)
+#          channel = client.get_channel(new_channel.id)
+#          await channel.set_permissions(message.author, manage_channels=True, manage_messages=True)
+#          await new_channel.edit(position=0)
+#          await message.channel.edit(position=0)
+#          channel = client.get_channel(new_channel)
             
     elif message.content.startswith("gen!timer "):
           timer = int(message.content[10:])
@@ -201,7 +201,7 @@ async def on_message(message):
           replymsg = f'{message.author.mention} {timer}秒経ったや... これ以上待つのは限界や...'
           await message.reply(replymsg)
     if message.content == 'gen!channel':
-          embed=discord.Embed(title=f"限界やBot{Genkaiya_emoji}特殊チャンネル", description="※これらの機能はコマンドではありません。指示に従ってチャンネルを作成してください。", color=0xffffff)
+#          embed=discord.Embed(title=f"限界やBot{Genkaiya_emoji}特殊チャンネル", description="※これらの機能はコマンドではありません。指示に従ってチャンネルを作成してください。", color=0xffffff)
           embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
           embed.add_field(name="チャンネル作成機能", value="任意のチャンネルのトピックを **チャンネル作成** に設定してください。そこに発言されるとチャンネルが作成されます。\nチャンネル作成用にカテゴリーを作成してください", inline=True)
 client.run(Token)
