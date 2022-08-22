@@ -189,7 +189,7 @@ async def on_message(message):
           text = f"{new_channel.mention} を作成しました"
           await message.channel.send(text)
           channel = client.get_channel(new_channel.id)
-          await channel.set_permissions((message.author, manage_channels=True, manage_messages=True)
+          await channel.set_permissions(message.author, manage_channels=True, manage_messages=True)
           await new_channel.edit(position=0)
           await message.channel.edit(position=0)
           channel = client.get_channel(new_channel)
