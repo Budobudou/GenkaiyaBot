@@ -84,7 +84,7 @@ async def on_message(message):
             if user_id == int(data[1]):
                 await message.add_reaction(Genkaiya_emoji)
         count += 1
-    if message.content in genkaiwordlist:
+    for if message.content in genkaiwordlist:
         await message.add_reaction(Genkaiya_emoji)
         with open("gencount.pickle","wb") as f:
             global gencount
