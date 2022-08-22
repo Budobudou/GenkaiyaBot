@@ -185,7 +185,8 @@ async def on_message(message):
         else:
             await message.reply("権限がないんや...")
     elif message.channel.topic == "チャンネル作成":
-          new_channel = await message.guild.create_text_channel(message, channel_name=message.content)
+          category = message.guild.get_channel
+          new_channel = await category.create_text_channel(category = message.guild.get_channel,name=message.content)
           text = f"{new_channel.mention} を作成しました"
           await message.channel.send(text)
           channel = client.get_channel(new_channel.id)
