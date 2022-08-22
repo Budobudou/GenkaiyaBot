@@ -1,7 +1,8 @@
 # GenkaiyaBot
 
 限界やちゃんBot
-
+## Bot の追加はこちらから！
+https://discord.com/api/oauth2/authorize?client_id=1008709839683334186&permissions=268438592&scope=bot%20applications.commands
 ## How to use
 
 1. `token.txt` を開き、以下のように記述する
