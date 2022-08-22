@@ -48,3 +48,11 @@ helpコマンドの追加
 randomコマンドを追加
 
 addコマンドを追加
+### Version 1.2 Developer Preview
+
+タイマー機能、限界カウンターを追加
+
+random機能を強化
+
+[管理者向け]eval shell コマンドを追加
+
