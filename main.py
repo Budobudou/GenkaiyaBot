@@ -17,7 +17,7 @@ Version = "1.2(Developer Preview)"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 startnotify_channel = "1010162569799028869"
-genkaiwordlist =　["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ"]
+genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ"]
 with open("./admins.txt") as f:
     admins = f.read()
 global gencount
