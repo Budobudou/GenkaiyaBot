@@ -142,6 +142,7 @@ async def on_message(message):
         user_data_text_write.close()
         await message.reply(user_id_mention+"を追加したんや...")
     elif message.content == "gen!remove":
+        a = await message.channel.send('削除しているんや...')
         with open("./user.txt") as f:
             rem = f.read()
             f.close
@@ -150,6 +151,7 @@ async def on_message(message):
         with open("./user.txt","w") as f:
             f.write(deleted)
             f.close
+        await a.edit('削除したんや...') 
     elif message.content.startswith("gen!eval "):
        if str(message.author.id) in admins:
            eva = message.content[8:]
