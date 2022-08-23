@@ -124,6 +124,8 @@ async def on_message(message):
             embed.add_field(name="gen!timer [秒数]",value="秒数の分だけ時間を測るや...",inline=True)
 #            embed.add_field(name="gen!channel",value="特殊なチャンネルリストを表示するや...",inline=True)
             embed.add_field(name="gen!emoji [カスタム絵文字]",value="カスタム絵文字のURLを取得するや...",inline=True)
+            embed.add_field(name="gen!serverinfo",value="このサーバーの情報を取得するや...",inline=True)
+            embed.add_field(name="gen!userinfo [メンション]",value="カスタム絵文字のURLを取得するや...",inline=True)
             if str(message.author.id) in admins:
                 embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
                 embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
@@ -245,12 +247,12 @@ async def on_message(message):
           await asyncio.sleep(timer)
           replymsg = f'{message.author.mention} {timer}秒経ったや... これ以上待つのは限界や...'
           await message.reply(replymsg)
-    if message.content == 'gen!channel':
+#    if message.content == 'gen!channel':
 #          embed=discord.Embed(title=f"限界やBot{Genkaiya_emoji}特殊チャンネル", description="※これらの機能はコマンドではありません。指示に従ってチャンネルを作成してください。", color=0xffffff)
-          embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-          embed.add_field(name="チャンネル作成機能", value="任意のチャンネルのトピックを **チャンネル作成** に設定してください。そこに発言されるとチャンネルが作成されます。\nチャンネル作成用にカテゴリーを作成してください", inline=True)
+#          embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+#          embed.add_field(name="チャンネル作成機能", value="任意のチャンネルのトピックを **チャンネル作成** に設定してください。そこに発言されるとチャンネルが作成されます。\nチャンネル作成用にカテゴリーを作成してください", inline=True)
 
-    if message.content.startswith("gen!emoji "):
+    elif message.content.startswith("gen!emoji "):
         emoji = message.content[10:]
         match = re.match('^<:.+:([0-9]+)>', emoji) or re.match('^<a:.+:([0-9]+)>', emoji)
         if not match:
@@ -259,4 +261,33 @@ async def on_message(message):
         if not emoji:
             return await message.channel.send("絵文字が取得できなかったんや...")
         await message.channel.send(str(emoji.url))
+    elif message.content.startswith("gen!userinfo "):
+        suser = re.sub(r"\D", "", message.content)
+        user = await client.fetch_user(int(suser))
+        embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
+        embed.set_thumbnail(url=user.avatar_url_as(static_format="png"))
+        embed.set_footer(
+            text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
+        embed.add_field(name="・ユーザー名", value=f"{user.name}", inline=False)
+        embed.add_field(
+            name="・ユーザータグ", value=f"#{user.discriminator}", inline=False)
+        embed.add_field(name="・ユーザーID", value=f"{user.id}", inline=False)
+        embed.add_field(name="・BOTか", value=f"{user.bot}", inline=False)
+        embed.add_field(name="・アカウントの作成日(UTC)",
+            value=f"{user.created_at}", inline=False)
+        await message.channel.send(embed=embed)
+    elif message.content == "gen!serverinfo":
+        embed = discord.Embed(title=f"{message.guild}の情報", color=0xffffff)
+        embed.set_thumbnail(url=message.guild.icon_url)
+        embed.set_footer(
+            text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
+        embed.add_field(name="・サーバー名", value=f"{message.guild.name}", inline=False)
+        embed.add_field(
+            name="・サーバーオーナー", value=f"{message.guild.owner}", inline=False)
+        embed.add_field(name="・サーバーID", value=f"{message.guild.id}", inline=False)
+        embed.add_field(name="・カスタム絵文字", value=f"{len(message.guild.emojis)}個", inline=False)
+        embed.add_field(name="・サーバーの作成日(UTC)",
+            value=f"{message.guild.created_at}", inline=False)
+        await message.channel.send(embed=embed)
+        
 client.run(Token)
