@@ -162,11 +162,14 @@ async def on_message(message):
            await message.channel.send('権限がないんや...') 
     elif message.content.startswith("gen!shell "):
        if str(message.author.id) in admins:
-           cmd = message.content[9:]
-           kekka = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
-           kekka2 = kekka.stdout.read()
-           kekka3 = kekka2.decode("utf-8")
-           await message.reply(f'```\n{kekka3}\n```')
+           if 'token.txt' in message.content
+               await message.reply('このファイルはここでは操作できないや...')
+           else:
+               cmd = message.content[9:]
+               kekka = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
+               kekka2 = kekka.stdout.read()
+               kekka3 = kekka2.decode("utf-8")
+               await message.reply(f'```\n{kekka3}\n```')
        else:
            await message.channel.send('権限がないんや...') 
     elif message.content == 'gen!reboot':
