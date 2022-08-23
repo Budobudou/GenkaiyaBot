@@ -297,5 +297,5 @@ async def on_message(message):
         res = requests.get(geturl)
         json = res.json()
         se = json['shorturl']
-        await message.channel.send(f"is.gdでメッセージを短縮したや...\n{se}")
+        await message.channel.send(f"is.gdでURLを短縮したや...\n{se}")
 client.run(Token)
