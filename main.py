@@ -14,9 +14,11 @@ client = discord.Client(intents=discord.Intents.all())
 # Token file read.
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
+# 環境設定
 Version = "1.2(Developer Preview)"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
+loading_emoji = "<a:loading:1011568375748636772>"
 GLOBAL_CH_NAME = "限界やちゃっと"
 GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
 startnotify_channel = "1010162569799028869"
@@ -202,7 +204,7 @@ async def on_message(message):
         channels = client.get_all_channels()
         global_channels = [ch for ch in channels if ch.name == GLOBAL_CH_NAME]
         try:
-            await message.add_reaction("📡")
+            await message.add_reaction(loading_emoji)
         except:pass
         for channel in global_channels:
             if channel.id == message.channel.id:continue
