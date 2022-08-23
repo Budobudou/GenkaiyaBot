@@ -128,6 +128,7 @@ async def on_message(message):
             embed.add_field(name="gen!emoji [カスタム絵文字]",value="カスタム絵文字のURLを取得するや...",inline=True)
             embed.add_field(name="gen!serverinfo",value="このサーバーの情報を取得するや...",inline=True)
             embed.add_field(name="gen!userinfo [メンション]",value="カスタム絵文字のURLを取得するや...",inline=True)
+            embed.add_field(name="gen!shorturl [短縮するURL]",value="URLを短縮するや...",inline=True)
             if str(message.author.id) in admins:
                 embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
                 embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
@@ -289,5 +290,11 @@ async def on_message(message):
         embed.add_field(name="・サーバーの作成日(UTC)",
             value=f"{message.guild.created_at}", inline=False)
         await message.channel.send(embed=embed)
-        
+    elif message.content.startswith("gen!shorturl "):
+        timer = message.content[13:]
+        geturl = f"https://is.gd/create.php?format=simple&format=json&url={timer}"
+        res = requests.get(geturl)
+        json = res.json()
+        se = json['shorturl']
+        await message.channel.send(f"is.gdでメッセージを短縮したや...\n{se}")
 client.run(Token)
