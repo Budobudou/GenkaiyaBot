@@ -9,7 +9,7 @@ import subprocess
 import pandas as pd
 from datetime import datetime
 from discord.ext import tasks
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.all())
 # Token file read.
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
