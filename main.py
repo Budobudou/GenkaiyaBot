@@ -162,7 +162,7 @@ async def on_message(message):
            await message.channel.send('権限がないんや...') 
     elif message.content.startswith("gen!shell "):
        if str(message.author.id) in admins:
-           if 'token.txt' in message.content
+           if 'token.txt' in message.content:
                await message.reply('このファイルはここでは操作できないや...')
            else:
                cmd = message.content[9:]
