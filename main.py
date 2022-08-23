@@ -4,6 +4,7 @@ import os
 import random
 import discord
 import asyncio
+import re
 import pickle
 import subprocess
 import pandas as pd
@@ -120,8 +121,9 @@ async def on_message(message):
             embed.add_field(name="gen!add [メンション]",value="指定されたユーザーの全てのメッセージを限界にするや...",inline=True)
             embed.add_field(name="gen!remove",value="自分のメッセージを限界にするのをやめるんや...",inline=True)
             embed.add_field(name="gen!random",value="限界やちゃんの画像をランダムに表示するや...",inline=True)
-            embed.add_field(name="gen!timer",value="秒数の分だけ時間を測るや...",inline=True)
-            embed.add_field(name="gen!channel",value="特殊なチャンネルリストを表示するや...",inline=True)
+            embed.add_field(name="gen!timer [秒数]",value="秒数の分だけ時間を測るや...",inline=True)
+#            embed.add_field(name="gen!channel",value="特殊なチャンネルリストを表示するや...",inline=True)
+            embed.add_field(name="gen!emoji [カスタム絵文字]",value="カスタム絵文字のURLを取得するや...",inline=True)
             if str(message.author.id) in admins:
                 embed.add_field(name="gen!exit",value="Botを終了するや...",inline=True)
                 embed.add_field(name="gen!reboot",value="Botを再起動するや...",inline=True)
