@@ -70,7 +70,6 @@ async def on_ready():
     print("起動しました")
     serversuu = len(client.guilds)
     await client.change_presence(activity=discord.Game(name=random.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...","コマンド一覧の表示はgen!helpを入力してや...","gen!randomと打ってみてや...","「限界や」と言ってみてや..."))
-))
     notify = await client.fetch_channel(startnotify_channel)
     await notify.send("起動したや...")
 @client.event
