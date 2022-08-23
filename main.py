@@ -16,6 +16,7 @@ Token = setting[0]
 Version = "1.2(Developer Preview)"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
+GLOBAL_CH_NAME = "限界やちゃっと"
 startnotify_channel = "1010162569799028869"
 genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい"]
 with open("./admins.txt") as f:
@@ -68,7 +69,7 @@ async def on_ready():
     await notify.send("起動したや...")
 @client.event
 async def on_message(message):
-    if message.author.bot:
+    if message.author.bot or message.author.discriminator == "0000":
         return
     user_data_text = open('user.txt', 'r')
     user_data = user_data_text.readlines()
@@ -191,6 +192,40 @@ async def on_message(message):
           os.execl(python,python, * sys.argv)
         else:
             await message.reply("権限がないんや...")
+# グローバルチャット
+    if message.channel.name == GLOBAL_CH_NAME:
+        channels = client.get_all_channels()
+        global_channels = [ch for ch in channels if ch.name == GLOBAL_CH_NAME]
+        try:
+            await message.add_reaction("📡")
+        except:pass
+        for channel in global_channels:
+            if channel.id == message.channel.id:continue
+            try:
+                ch_webhooks = await channel.webhooks()
+            except:pass
+            if ch_webhooks == []:
+                try:webhook = await channel.create_webhook(name=GLOBAL_WEBHOOK_NAME, reason=f"{GLOBAL_CH_NAME}の為にwebhook作成したや...")
+                except:continue
+            else:
+                webhook = ch_webhooks[0]
+            content = message.content.replace("@", "＠")
+            if content == "":content = "メッセージ内容がないんや..."
+            for attachment in message.attachments:
+                content = content + "\n" + attachment.url
+            try:
+                await webhook.send(content=content,
+                    username=f"{message.author} from {message.guild}",
+                    avatar_url=message.author.avatar_url_as(format="png"),
+                    embed=message.embeds[0])
+            except:
+                await webhook.send(content=content,
+                    username=f"{message.author} from {message.guild}",
+                    avatar_url=message.author.avatar_url_as(format="png"))
+        try:
+            await message.remove_reaction("📡", message.guild.me)
+            await message.add_reaction("✅")
+        except:pass
 #    elif message.channel.topic == "チャンネル作成":
 #          new_channel = await message.guild.create_text_channel(name=message.content)
 #          text = f"{new_channel.mention} を作成したや..."
