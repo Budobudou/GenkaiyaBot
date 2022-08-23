@@ -17,6 +17,7 @@ Version = "1.2(Developer Preview)"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 GLOBAL_CH_NAME = "限界やちゃっと"
+GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
 startnotify_channel = "1010162569799028869"
 genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい"]
 with open("./admins.txt") as f:
