@@ -258,11 +258,11 @@ async def on_message(message):
         emoji = message.content[10:]
         match = re.match('^<:.+:([0-9]+)>', emoji) or re.match('^<a:.+:([0-9]+)>', emoji)
         if not match:
-            return await message.channel.send("これはカスタム絵文字ではないかもしれないんや...")
+            return await message.reply("これはカスタム絵文字ではないかもしれないんや...")
         emoji = client.get_emoji(int(match.groups()[0]))
         if not emoji:
-            return await message.channel.send("絵文字が取得できなかったんや...")
-        await message.channel.send(str(emoji.url))
+            return await message.reply("絵文字が取得できなかったんや...")
+        await message.reply(str(emoji.url))
     elif message.content.startswith("gen!userinfo "):
         suser = re.sub(r"\D", "", message.content)
         user = await client.fetch_user(int(suser))
@@ -277,7 +277,7 @@ async def on_message(message):
         embed.add_field(name="・BOTか", value=f"{user.bot}", inline=False)
         embed.add_field(name="・アカウントの作成日(UTC)",
             value=f"{user.created_at}", inline=False)
-        await message.channel.send(embed=embed)
+        await message.reply(embed=embed)
     elif message.content == "gen!serverinfo":
         embed = discord.Embed(title=f"{message.guild}の情報", color=0xffffff)
         embed.set_thumbnail(url=message.guild.icon_url)
@@ -290,12 +290,12 @@ async def on_message(message):
         embed.add_field(name="・カスタム絵文字", value=f"{len(message.guild.emojis)}個", inline=False)
         embed.add_field(name="・サーバーの作成日(UTC)",
             value=f"{message.guild.created_at}", inline=False)
-        await message.channel.send(embed=embed)
+        await message.reply(embed=embed)
     elif message.content.startswith("gen!shorturl "):
         timer = message.content[13:]
         geturl = f"https://is.gd/create.php?format=simple&format=json&url={timer}"
         res = requests.get(geturl)
         json = res.json()
         se = json['shorturl']
-        await message.channel.send(f"is.gdでURLを短縮したや...\n{se}")
+        await message.reply(f"is.gdでURLを短縮したや...\n{se}")
 client.run(Token)
