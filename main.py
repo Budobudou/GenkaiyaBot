@@ -247,4 +247,14 @@ async def on_message(message):
 #          embed=discord.Embed(title=f"限界やBot{Genkaiya_emoji}特殊チャンネル", description="※これらの機能はコマンドではありません。指示に従ってチャンネルを作成してください。", color=0xffffff)
           embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
           embed.add_field(name="チャンネル作成機能", value="任意のチャンネルのトピックを **チャンネル作成** に設定してください。そこに発言されるとチャンネルが作成されます。\nチャンネル作成用にカテゴリーを作成してください", inline=True)
+
+    if message.content.startswith("gen!emoji "):
+        emoji = message.content[10:]
+        match = re.match('^<:.+:([0-9]+)>', emoji) or re.match('^<a:.+:([0-9]+)>', emoji)
+        if not match:
+            return await message.channel.send("これはカスタム絵文字ではないかもしれないんや...")
+        emoji = client.get_emoji(int(match.groups()[0]))
+        if not emoji:
+            return await message.channel.send("絵文字が取得できなかったんや...")
+        await message.channel.send(str(emoji.url))
 client.run(Token)
