@@ -7,6 +7,7 @@ import asyncio
 import re
 import pickle
 import subprocess
+import requests
 import pandas as pd
 from datetime import datetime
 from discord.ext import tasks
