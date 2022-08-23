@@ -208,9 +208,7 @@ async def on_message(message):
         except:pass
         for channel in global_channels:
             if channel.id == message.channel.id:continue
-            try:
-                ch_webhooks = await channel.webhooks()
-            except:pass
+            ch_webhooks = await channel.webhooks()
             if ch_webhooks == []:
                 try:webhook = await channel.create_webhook(name=GLOBAL_WEBHOOK_NAME, reason=f"{GLOBAL_CH_NAME}の為にwebhook作成したや...")
                 except:continue
