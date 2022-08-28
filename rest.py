@@ -261,7 +261,9 @@ async def on_message(message):
            except:pass
            for channel in global_channels:
                if channel.id == message.channel.id:continue
-               ch_webhooks = await channel.webhooks()
+               try:
+                  ch_webhooks = await channel.webhooks()
+               except discord.errors.Forbidden:continue
                if ch_webhooks == []:
                    try:webhook = await channel.create_webhook(name=GLOBAL_WEBHOOK_NAME, reason=f"{GLOBAL_CH_NAME}の為にwebhook作成したや...")
                    except:continue
