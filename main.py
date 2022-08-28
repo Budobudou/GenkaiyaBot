@@ -297,4 +297,6 @@ async def on_message(message):
         json = res.json()
         se = json['shorturl']
         await message.reply(f"is.gdでURLを短縮したや...\n{se}")
+    elif message.content.startswith("gen!"):
+        await message.reply(f"そんなコマンドないや...")
 client.run(Token)
