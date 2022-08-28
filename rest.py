@@ -260,12 +260,10 @@ async def on_message(message):
                await message.add_reaction("📡")
            except:pass
            for channel in global_channels:
-               try:
-                   if channel.id == message.channel.id:continue
-                       ch_webhooks = await channel.webhooks()
-               except:pass
+               if channel.id == message.channel.id:continue
+               ch_webhooks = await channel.webhooks()
                if ch_webhooks == []:
-                   try:webhook = await channel.create_webhook(name=GLOBAL_WEBHOOK_NAME, reason="グローバルチャットの為にwebhook作成したや...")
+                   try:webhook = await channel.create_webhook(name=GLOBAL_WEBHOOK_NAME, reason=f"{GLOBAL_CH_NAME}の為にwebhook作成したや...")
                    except:continue
                else:
                    webhook = ch_webhooks[0]
