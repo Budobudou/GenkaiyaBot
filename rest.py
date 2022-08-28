@@ -11,7 +11,6 @@ import requests
 import pandas as pd
 from datetime import datetime
 from discord.ext import tasks
-TOKEN = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client(intents=discord.Intents.all())
 # Token file read.
 setting = open('token.txt', 'r').readlines()
@@ -533,4 +532,4 @@ async def on_message(message):
    except ValueError:
                 print("Value")
 # TOKEN の 指定
-client.run(TOKEN)
+client.run(Token)
