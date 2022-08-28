@@ -257,7 +257,7 @@ async def on_message(message):
            channels = client.get_all_channels()
            global_channels = [ch for ch in channels if ch.name == GLOBAL_CH_NAME]
            try:
-               await message.add_reaction("📡")
+               await message.add_reaction(loading_emoji)
            except:pass
            for channel in global_channels:
                if channel.id == message.channel.id:continue
@@ -283,7 +283,7 @@ async def on_message(message):
                        username=f"{message.author} from {message.guild}",
                        avatar_url=message.author.avatar_url_as(format="png"))
            try:
-               await message.remove_reaction("📡", message.guild.me)
+               await message.remove_reaction(loading_emoji, message.guild.me)
                await message.add_reaction("✅")
            except:pass
        # dice
