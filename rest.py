@@ -18,7 +18,7 @@ Token = setting[0]
 # 環境設定
 Version = "1.2(Developer Preview)"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
-invite_link = f"https://discord.com/api/oauth2/authorize?client_id={client.id}&permissions=52304&scope=applications.commands%20bot"
+invite_link = f"https://discord.com/api/oauth2/authorize?client_id={client.user.id}&permissions=52304&scope=applications.commands%20bot"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 loading_emoji = "<a:loading:1011568375748636772>"
 GLOBAL_CH_NAME = "限界やちゃっと"
