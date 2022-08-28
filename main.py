@@ -248,7 +248,7 @@ async def on_message(message):
           await asyncio.sleep(timer)
           replymsg = f'{message.author.mention} {timer}秒経ったや... これ以上待つのは限界や...'
           await message.reply(replymsg)
-#    if message.content == 'gen!channel':
+#   elif message.content == 'gen!channel':
 #          embed=discord.Embed(title=f"限界やBot{Genkaiya_emoji}特殊チャンネル", description="※これらの機能はコマンドではありません。指示に従ってチャンネルを作成してください。", color=0xffffff)
 #          embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
 #          embed.add_field(name="チャンネル作成機能", value="任意のチャンネルのトピックを **チャンネル作成** に設定してください。そこに発言されるとチャンネルが作成されます。\nチャンネル作成用にカテゴリーを作成してください", inline=True)
@@ -297,6 +297,4 @@ async def on_message(message):
         json = res.json()
         se = json['shorturl']
         await message.reply(f"is.gdでURLを短縮したや...\n{se}")
-    elif message.content.startswith("gen!"):
-        await message.reply(f"そんなコマンドないや...")
 client.run(Token)
