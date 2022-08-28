@@ -332,7 +332,7 @@ async def on_message(message):
        elif message.content.startswith("gen!say "):
            msg1 = message.content[8:]
            msg = msg1.replace('@','.')
-           await message.reply(msg)
+           await message.channel.send(msg)
        # sisoku
        elif message.content.startswith("gen!calc+"):
            moto = int(message.content.split()[-2])
