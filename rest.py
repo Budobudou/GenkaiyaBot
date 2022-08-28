@@ -159,7 +159,7 @@ async def on_message(message):
        # gen!invite と発言したらメッセージを返す
        elif message.content == 'gen!invite':
        
-           await message.reply('こちらがこのBotの招待URLや...! https://discord.com/oauth2/authorize?client_id=764023331891707924&permissions=1946545232&scope=bot')
+           await message.reply('こちらがこのBotの招待URLや...! https://discord.com/api/oauth2/authorize?client_id=1008709839683334186&permissions=52304&scope=applications.commands%20bot')
 
        elif message.content == 'gen!toolhelp':
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ ユーティリティ", description="便利なユーティリティ達や...", color=0xffffff)
