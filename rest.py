@@ -217,7 +217,6 @@ async def on_message(message):
            embed.add_field(name="更新内容", value="・限界やちゃんBotを更新", inline=False)
            embed.set_footer(text=f"更新日：{Updatedate}")
            await message.reply(embed=embed)
-            await message.reply(embed=embed)
        elif message.content == 'gen!help':
            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ", description="コマンド種類別にヘルプをまとめたや...", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
