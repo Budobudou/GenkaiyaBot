@@ -155,65 +155,39 @@ async def on_message(message):
                eva = message.content[9:]
                await eval(eva)
            else:
-               await message.reply('eval権限がありませんw')       
-       elif message.content == 'gen!itigo':
-       
-           await message.reply('限界やちゃんいちごいちごいちごいちご!!!')
-           print('gen!itigoが実行されました。')
-       # gen!help と発言したらメッセージを返す
-       
-       
+               await message.reply('eval権限がありませんw')
        # gen!invite と発言したらメッセージを返す
-       
        elif message.content == 'gen!invite':
        
            await message.reply('こちらがこのBotの招待URLや...! https://discord.com/oauth2/authorize?client_id=764023331891707924&permissions=1946545232&scope=bot')
-       elif message.content == 'gen!modhelp':
-           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}サーバー管理", description="これらのコマンドは管理者権限を持っている人のみ使えます", color=0xffffff)
-           embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-           embed.add_field(name="gen!enablechat", value="このBotの挨拶機能を有効・無効化します。", inline=True)
-           embed.add_field(name="gen!clean", value="実行したチャンネルのメッセージを100件消去します", inline=True)
-           embed.add_field(name="gen!say <発言させる文章>", value="Botに代わって任意のメッセージを発言します", inline=True)
-           embed.add_field(name="gen!createchannel", value="チャンネルを新規作成します", inline=True)
-           embed.add_field(name="gen!rename <名前>", value="実行したチャンネルの名前を変更します", inline=True)
-           embed.add_field(name="gen!ban <ID>", value="実行したサーバーから指定したユーザーをBANします", inline=True)
-           embed.add_field(name="gen!kick <ID>", value="実行したサーバーから指定したユーザーをキックします", inline=True)
-           await message.reply(embed=embed)
+
        elif message.content == 'gen!toolhelp':
-            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}便利ツール", description="便利なツール達や...", color=0xffffff)
+            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ ユーティリティ", description="便利なユーティリティ達や...", color=0xffffff)
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            embed.add_field(name="gen!timer <秒数>", value="指定した秒数にタイマーをセットします", inline=True)
-            embed.add_field(name="gen!sdlurl <リンク>", value="ダウンロードURL短縮でURLを短縮します", inline=True)
-            embed.add_field(name="gen!shorturl <リンク>", value="is.gdでURLを短縮します", inline=True)
-            embed.add_field(name="gen!urlunzip <リンク>", value="URLを展開します。", inline=True)
-            embed.add_field(name="gen!calc", value="計算コマンドリストを表示します", inline=True)
-            embed.add_field(name="gen!google <検索ワード>", value="Google検索のURLを表示します", inline=True)
-            embed.add_field(name="gen!ds <検索ワード>", value="Disboardでサーバーを検索します。", inline=True)
-            embed.add_field(name="gen!getserverinfo", value="コマンドを実行したサーバーの情報を表示します", inline=True)
-            embed.add_field(name="gen!getin <ID>", value="他のBotのIDからBotの招待リンクを発行します", inline=True)
-            embed.add_field(name="gen!emoji <カスタム絵文字>", value="カスタム絵文字のURLを取得します", inline=True)
-            embed.add_field(name="gen!getuserid <ユーザー名>", value="ユーザー名からIDを取得します。", inline=True)
-            embed.add_field(name="gen!getchannelid <チャンネル名>", value="チャンネル名からIDを取得します。", inline=True)
+            embed.add_field(name="gen!timer <秒数>", value="タイマーをセットするや...", inline=True)
+            embed.add_field(name="gen!sdlurl <リンク>", value="ダウンロードURL短縮でURLを短縮するや..", inline=True)
+            embed.add_field(name="gen!shorturl <リンク>", value="is.gdでURLを短縮するや...", inline=True)
+            embed.add_field(name="gen!urlunzip <リンク>", value="短縮URLを展開するや...", inline=True)
+            embed.add_field(name="gen!calc", value="計算コマンドリストを表示するや...", inline=True)
+            embed.add_field(name="gen!google <検索ワード>", value="Google検索のURLを表示するや...", inline=True)
+            embed.add_field(name="gen!ds <検索ワード>", value="Disboardでサーバーを検索するや...", inline=True)
+            embed.add_field(name="gen!getserverinfo", value="コマンドを実行したサーバーの情報を表示するや...", inline=True)
+            embed.add_field(name="gen!getin <ID>", value="他のBotのIDからBotの招待リンクを発行するや...", inline=True)
+            embed.add_field(name="gen!emoji <カスタム絵文字>", value="カスタム絵文字のURLを取得・表示するや...", inline=True)
+            embed.add_field(name="gen!say <発言させる文章>", value="Botに代わって任意のメッセージを言うや...", inline=True)
             await message.reply(embed=embed)
        elif message.content == 'gen!playhelp':
-            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}ゲーム", description="ミニゲームのヘルプや...", color=0xffffff)
+            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ お楽しみ", description="お楽しみや...", color=0xffffff)
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            embed.add_field(name="gen!janken", value="Botとジャンケンができます", inline=True)
-            embed.add_field(name="gen!dice", value="サイコロを振り、1から6の数値を出します", inline=True)
-            embed.add_field(name="gen!cdice <目数>", value="任意の目数のサイコロを振ります", inline=True)
-            embed.add_field(name="2!cointoss", value="コイントスをします", inline=True)
+            embed.add_field(name="gen!janken", value="ジャンケンをするや...", inline=True)
+            embed.add_field(name="gen!dice", value="サイコロを振って1から6の数値を出すや...", inline=True)
+            embed.add_field(name="gen!cdice <目数>", value="任意の目数のサイコロを振るや...", inline=True)
+            embed.add_field(name="gen!cointoss", value="コイントスをするや...", inline=True)
+            embed.add_field(name="gen!random", value="限界やちゃんの画像をランダムに表示するや...", inline=True)
             await message.reply(embed=embed)
 
-       elif message.content == 'gen!globalhelp':
-           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}グローバルツール", description="グローバルツールの一覧や...", color=0xffffff)
-           embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-           embed.add_field(name="gen!gc_help", value="グローバルチャットのセットアップ方法と、ルールを表示します", inline=True)
-           embed.add_field(name="gen!memo <ワード>　gen!memo2 <ワード> gen!memo3 <ワード>", value="グローバルメモを各スロットに保存します", inline=True)
-           embed.add_field(name="gen!view", value="グローバルメモをDMに送信します", inline=True)
-           embed.add_field(name="gen!sview", value="サーバーにグローバルメモを表示します(管理者権限必須)", inline=True)
-           await message.reply(embed=embed)
        elif message.content == 'gen!resohelp':
-           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}リソース", description=f"導入サーバー数：{len(client.guilds)}", color=0xffffff)
+           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
            embed.add_field(name="gen!invite", value="このBotの招待リンクを表示します。", inline=True)
            embed.add_field(name="gen!updateinfo", value="アップデート情報を表示します", inline=True)
@@ -237,17 +211,12 @@ async def on_message(message):
            else:
                await message.reply("権限がないんや...")
        elif message.content == 'gen!updateinfo':
-           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}アップデート情報", description="このBotのアップデート情報を表示します。", color=0xffffff)
+           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}リソース ＞ アップデート情報", description="このBotのアップデート情報を表示するや...", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
            embed.add_field(name="バージョン", value="1.2rb", inline=False)
            embed.add_field(name="更新内容", value="・限界やちゃんBotを更新", inline=False)
            embed.set_footer(text=f"更新日：{Updatedate}")
            await message.reply(embed=embed)
-       elif message.content == 'gen!channel':
-            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}特殊チャンネル", description="※これらの機能はコマンドではありません。指示に従ってチャンネルを作成してください。", color=0xffffff)
-            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            embed.add_field(name="時報機能", value="時報 という名前でチャンネルを作成。", inline=True)
-            embed.add_field(name="チャンネル作成機能", value="任意のチャンネルのトピックを **いちごチャンネル作成** に設定してください。そこに発言されるとチャンネルが作成されます。", inline=True)
             await message.reply(embed=embed)
        elif message.content == 'gen!help':
            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ", description="コマンド種類別にヘルプをまとめたや...", color=0xffffff)
@@ -256,7 +225,7 @@ async def on_message(message):
            embed.add_field(name="お楽しみ", value="gen!playhelp", inline=True)
            embed.add_field(name="グローバルチャット", value="gen!globalhelp", inline=True)
            embed.add_field(name="リソース", value="gen!resohelp", inline=True)
-           embed.add_field(name="特殊チャンネル", value="gen!channel", inline=True)
+           embed.add_field(name="ライセンス情報", value="gen!license", inline=True)
            embed.set_footer(text="バージョン 1.2")
            await message.reply(embed=embed)
 
@@ -279,12 +248,9 @@ async def on_message(message):
        elif client.user in message.mentions: # 話しかけられたかの判定
            await reply2(message) # 返信する非同期関数を実行
        # gen!gc_help 
-       elif message.content == 'gen!gc_help':       
-              await message.reply('・参加するには任意のチャンネルのトピックと名前を 限界や に設定してください。 \n ・以下の行為は禁止とさせて頂きます。ご了承下さい。 \n 他人を傷つけるような事を発言 \n スパム、荒らし投稿 \n NSFWに繋がる恐れのある画像、発言 \n 宣伝(Bot管理者が許可した物は除く) \n Botに負荷をかける行為 \n セルフBotの使用 \n このような行為が発見された場合規制を行います。ルールを守ってご利用ください。')
+       elif message.content == 'gen!globalhelp':       
+              await message.reply('・参加するには任意のチャンネルの名前を 限界やちゃっと に設定してください。 \n ・以下の行為は禁止とさせて頂きます。ご了承下さい。 \n 他人を傷つけるような事を発言 \n スパム、荒らし投稿 \n NSFWに繋がる恐れのある画像、発言 \n 宣伝(Bot管理者が許可した物は除く) \n Botに負荷をかける行為 \n セルフBotの使用 \n このような行為が発見された場合規制を行います。ルールを守ってご利用ください。')
               print('gen!gc_helpが実行されました。')
-       #gen!join
-       elif message.content == 'gen!join':
-              await message.reply('https://discord.gg/BKbzcEy')
 
 
        if message.author.discriminator == "0000":return
