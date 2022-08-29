@@ -226,7 +226,7 @@ async def on_message(message):
            embed.add_field(name="グローバルチャット", value="gen!globalhelp", inline=True)
            embed.add_field(name="リソース", value="gen!resohelp", inline=True)
            embed.add_field(name="ライセンス情報", value="gen!license", inline=True)
-           embed.set_footer(text="バージョン 1.2")
+           embed.set_footer(text=f"バージョン {Version}")
            await message.reply(embed=embed)
 
        
