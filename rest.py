@@ -495,6 +495,19 @@ async def on_message(message):
 
             await message.reply(judge)
    except ValueError:
-                print("Value")
+            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            embed.add_field(name="詳細", value=f"引数エラーが発生しました。\nコマンドの使い方はあっていますか？", inline=False)
+            await message.reply(embed=embed)
+   except discord.errors.Forbidden:
+            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            embed.add_field(name="詳細", value=f"権限エラーが発生しました。\nBotの権限を見直してください。", inline=False)
+            await message.reply(embed=embed)
+   except:
+            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            embed.add_field(name="詳細", value=f"不明なエラーが発生しました。\n詳しくは gen!resohelp からサポートサーバーに参加してください。", inline=False)
+            await message.reply(embed=embed)
 # TOKEN の 指定
 client.run(Token)
