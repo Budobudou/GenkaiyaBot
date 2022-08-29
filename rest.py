@@ -133,7 +133,7 @@ async def on_message(message):
                    pickle.dump(gencount, f)
                    print(gencount)
        if message.content.startswith("gen!google "):
-           memog = message.content[11:].replace('@','.')
+           memog = message.content[11:].replace('@','＠')
            await message.reply(f'**Google検索結果**\nhttps://www.google.com/search?q={memog}')
            
        #ping
@@ -331,8 +331,10 @@ async def on_message(message):
               await message.reply('管理者権限がありませんw')
        elif message.content.startswith("gen!say "):
            msg1 = message.content[8:]
-           msg = msg1.replace('@','.')
+           msg = msg1.replace('@','＠')
            await message.channel.send(msg)
+           if "@" in message.content:
+               await message.reply('🔓セキュリティ上の理由でアットマークを大文字に変換したや...')
        # sisoku
        elif message.content.startswith("gen!calc+"):
            moto = int(message.content.split()[-2])
