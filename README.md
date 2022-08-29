@@ -56,3 +56,11 @@ random機能を強化
 
 [管理者向け]eval shell コマンドを追加
 
+
+### Version 1.2rb
+
+Botのシステムを変更
+
+### Version 1.3rb
+
+エラーメッセージの追加
