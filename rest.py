@@ -82,7 +82,7 @@ async def create_channel(message, channel_name):
     return new_channel
 #リプライ
 async def reply2(message):
-    reply2 = f'{message.author.mention} はい、なんでしょう。 \n ||あ、コマンド一覧の表示はgen!helpと発言すると表示されますよ。||' # 返信メッセージの作成
+    reply2 = f'{message.author.mention} 限界や... \n ||コマンド一覧はgen!helpで表示されるや...||' # 返信メッセージの作成
     await message.reply(reply2) # 返信メッセージを送信
 #サーバーに招待されたとき
 
