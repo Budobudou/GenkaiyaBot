@@ -16,14 +16,14 @@ client = discord.Client(intents=discord.Intents.all())
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
 # 環境設定
-Version = "1.2(Developer Preview)"
+Version = "1.3rb"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
 invite_link = f"https://discord.com/api/oauth2/authorize?client_id=1008709839683334186&permissions=52304&scope=applications.commands%20bot"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 loading_emoji = "<a:loading:1011568375748636772>"
 GLOBAL_CH_NAME = "限界やちゃっと"
 GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
-Updatedate = "2022年8月28日"
+Updatedate = "2022年8月29日"
 startnotify_channel = "1010162569799028869"
 genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい"]
 with open("./admins.txt") as f:
@@ -189,9 +189,10 @@ async def on_message(message):
        elif message.content == 'gen!resohelp':
            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-           embed.add_field(name="gen!invite", value="このBotの招待リンクを表示します。", inline=True)
-           embed.add_field(name="gen!updateinfo", value="アップデート情報を表示します", inline=True)
-           embed.add_field(name="gen!license", value="ライセンス情報を表示します", inline=True)
+           embed.add_field(name="gen!invite", value="このBotの招待リンクを表示するや...", inline=True)
+           embed.add_field(name="gen!updateinfo", value="アップデート情報を表示するや...", inline=True)
+           embed.add_field(name="gen!license", value="ライセンス情報を表示するや...", inline=True)
+           embed.add_field(name="gen!ping", value="pingを測定するや...", inline=True)
            embed.add_field(name="限界やちゃんBotの公式サーバー", value=f"[参加する]({support_server_link})", inline=True)
            embed.set_footer(text=f"更新日：{Updatedate}")
            await message.reply(embed=embed)
@@ -213,8 +214,8 @@ async def on_message(message):
        elif message.content == 'gen!updateinfo':
            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}リソース ＞ アップデート情報", description="このBotのアップデート情報を表示するや...", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-           embed.add_field(name="バージョン", value="1.2rb", inline=False)
-           embed.add_field(name="更新内容", value="・限界やちゃんBotを更新", inline=False)
+           embed.add_field(name="バージョン", value="1.3rb", inline=False)
+           embed.add_field(name="更新内容", value="・helpの修正と安定性向上\nエラーメッセージの追加", inline=False)
            embed.set_footer(text=f"更新日：{Updatedate}")
            await message.reply(embed=embed)
        elif message.content == 'gen!help':
@@ -499,17 +500,17 @@ async def on_message(message):
    except ValueError:
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            embed.add_field(name="詳細", value=f"引数エラーが発生しました。\nコマンドの使い方はあっていますか？", inline=False)
+            embed.add_field(name="詳細や...", value=f"引数エラーが発生しました。\nコマンドの使い方はあっていますか？", inline=False)
             await message.reply(embed=embed)
    except discord.errors.Forbidden:
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            embed.add_field(name="詳細", value=f"権限エラーが発生しました。\nBotの権限を見直してください。", inline=False)
+            embed.add_field(name="詳細や...", value=f"権限エラーが発生しました。\nBotの権限を見直してください。", inline=False)
             await message.reply(embed=embed)
    except:
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            embed.add_field(name="詳細", value=f"不明なエラーが発生しました。\n詳しくは gen!resohelp からサポートサーバーに参加してください。", inline=False)
+            embed.add_field(name="詳細や...", value=f"不明なエラーが発生しました。\n詳しくは gen!resohelp からサポートサーバーに参加してください。", inline=False)
             await message.reply(embed=embed)
 # TOKEN の 指定
 client.run(Token)
