@@ -167,7 +167,6 @@ async def on_message(message):
             embed.add_field(name="gen!timer <秒数>", value="タイマーをセットするや...", inline=True)
             embed.add_field(name="gen!sdlurl <リンク>", value="ダウンロードURL短縮でURLを短縮するや..", inline=True)
             embed.add_field(name="gen!shorturl <リンク>", value="is.gdでURLを短縮するや...", inline=True)
-            embed.add_field(name="gen!urlunzip <リンク>", value="短縮URLを展開するや...", inline=True)
             embed.add_field(name="gen!calc", value="計算コマンドリストを表示するや...", inline=True)
             embed.add_field(name="gen!google <検索ワード>", value="Google検索のURLを表示するや...", inline=True)
             embed.add_field(name="gen!ds <検索ワード>", value="Disboardでサーバーを検索するや...", inline=True)
@@ -219,9 +218,15 @@ async def on_message(message):
            embed.add_field(name="更新内容", value="・helpの修正と安定性向上\nエラーメッセージの追加", inline=False)
            embed.set_footer(text=f"更新日：{Updatedate}")
            await message.reply(embed=embed)
+       elif message.content == 'gen!rehelp':
+           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ 限界リアクション機能について ", description="この機能についての説明や...", color=0xffffff)
+           embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+           embed.add_field(name="**Q**.これは何や...?", value="**A**.限界リアクション機能とは、「無理」「極限」などといった__「限界」に関係する文をリアクションでかわいく見せる__機能のことです。", inline=True)    
+           await message.reply(embed=embed)
        elif message.content == 'gen!help':
            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ", description="コマンド種類別にヘルプをまとめたや...", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+           embed.add_field(name="限界リアクション機能について", value="gen!rehelp", inline=True)
            embed.add_field(name="ユーティリティ", value="gen!toolhelp", inline=True)
            embed.add_field(name="お楽しみ", value="gen!playhelp", inline=True)
            embed.add_field(name="グローバルチャット", value="gen!globalhelp", inline=True)
@@ -229,7 +234,6 @@ async def on_message(message):
            embed.add_field(name="ライセンス情報", value="gen!license", inline=True)
            embed.set_footer(text=f"バージョン {Version}")
            await message.reply(embed=embed)
-
        
        elif message.content.startswith("gen!shorturl "):
            timer = message.content[13:]
@@ -237,7 +241,7 @@ async def on_message(message):
            res = requests.get(geturl)
            json = res.json()
            se = json['shorturl']
-           await message.reply(f"is.gdでメッセージを短縮しました！\n{se}")
+           await message.reply(f"is.gdでURLを短縮しました！\n{se}")
        # gen!timer
        elif message.content.startswith("gen!timer "):
            timer = int(message.content[10:])
@@ -308,35 +312,35 @@ async def on_message(message):
                await message.reply("📀表や...")
            elif cointoss == 0:
                await message.reply("💿裏や...")
-       elif message.content == "gen!add":
-          if message.author.guild_permissions.administrator:
-              if str(message.guild.id) in data1:
-                  f = open('serverid.txt', 'r')
-                  data3 = f.read()
-                  print(data3)
-                  deleted = re.sub(str(message.guild.id),"", data3, 1)
-                  with open("serverid.txt","w", encoding = "utf_8") as f:
-                      f.write(deleted)
-                      f.close
-                  await message.reply('このサーバーは既に有効になっていた為、無効化しました。')
-                  return
-              f = open('serverid.txt', 'r')
-              data2 = f.read()
-              f.close()
-              print(data2)
-              file = "serverid.txt"
-              with open(file,"w", encoding = "utf_8") as f:
-                  f.write(f"{data2},{message.guild.id}")
-                  f.close
-              await message.reply('挨拶機能を有効にしました。\n 無効化する場合はこのコマンドをもう一度実行してください')
-          else:
-              await message.reply('管理者権限がありませんw')
+#       elif message.content == "gen!add":
+#          if message.author.guild_permissions.administrator:
+#              if str(message.guild.id) in data1:
+#                  f = open('serverid.txt', 'r')
+#                  data3 = f.read()
+#                  print(data3)
+#                  deleted = re.sub(str(message.guild.id),"", data3, 1)
+#                  with open("serverid.txt","w", encoding = "utf_8") as f:
+#                      f.write(deleted)
+#                      f.close
+#                  await message.reply('このサーバーは既に有効になっていた為、無効化しました。')
+#                  return
+#              f = open('serverid.txt', 'r')
+#              data2 = f.read()
+#              f.close()
+#              print(data2)
+#              file = "serverid.txt"
+#              with open(file,"w", encoding = "utf_8") as f:
+#                  f.write(f"{data2},{message.guild.id}")
+#                  f.close
+#              await message.reply('挨拶機能を有効にしました。\n 無効化する場合はこのコマンドをもう一度実行してください')
+#          else:
+#              await message.reply('管理者権限がありませんw')
        elif message.content.startswith("gen!say "):
            msg1 = message.content[8:]
            msg = msg1.replace('@','＠')
            await message.channel.send(msg)
            if "@" in message.content:
-               await message.reply('🔓セキュリティ上の理由でアットマークを大文字に変換したや...')
+               await message.reply('セキュリティ上の理由でアットマークを大文字に変換したや...')
        # sisoku
        elif message.content.startswith("gen!calc+"):
            moto = int(message.content.split()[-2])
@@ -431,7 +435,7 @@ async def on_message(message):
            udrl = f'https://s.kantantools.com/api/v2/action/shorten?url={dl}'
            response = requests.get(udrl)
            dlk = response.text
-           await message.reply(dlk)
+           await message.reply(f"{dlk}\nファイルのダウンロードリンクを短縮しました！")
        #unzip
        elif message.content.startswith("gen!urlunzip "):
            anziping = message.content[13:]
