@@ -189,7 +189,7 @@ async def on_message(message):
 
        elif message.content == 'gen!resohelp':
            mem = psutil.virtual_memory()
-           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}\nサーバーの使用メモリ:{mem.percent}%", color=0xffffff)
+           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}\nBot鯖の使用RAM:{mem.percent}%", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
            embed.add_field(name="gen!invite", value="このBotの招待リンクを表示するや...", inline=True)
            embed.add_field(name="gen!updateinfo", value="アップデート情報を表示するや...", inline=True)
