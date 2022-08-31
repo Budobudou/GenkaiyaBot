@@ -7,6 +7,7 @@ import asyncio
 import re
 import pickle
 import subprocess
+import psutil
 import requests
 import pandas as pd
 from datetime import datetime
@@ -187,7 +188,8 @@ async def on_message(message):
             await message.reply(embed=embed)
 
        elif message.content == 'gen!resohelp':
-           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}", color=0xffffff)
+           mem = psutil.virtual_memory()
+           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}\nサーバーの使用メモリ:{mem.percent}%", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
            embed.add_field(name="gen!invite", value="このBotの招待リンクを表示するや...", inline=True)
            embed.add_field(name="gen!updateinfo", value="アップデート情報を表示するや...", inline=True)
