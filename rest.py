@@ -53,7 +53,7 @@ async def loop():
     now = datetime.now().strftime('%H:%M')
     print(now)
     if now == '22:00':
-        ch_name = "限界や出現数"
+        ch_name = "限界やちゃっと"
         global gencount
         msg = f"今日の全世界での限界やちゃん出現数は{gencount}回や...！\n明日はどうなるかや...おやすみや..."
         for channel in client.get_all_channels():
