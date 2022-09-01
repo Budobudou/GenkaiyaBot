@@ -102,8 +102,8 @@ async def on_guild_remove(guild):
 async def on_member_remove(member):
     for channel in member.guild.channels:
         # generalチャンネルでの自己紹介
-        if channel.name == '退出通知':
-            await channel.send(f" {member.name}がサーバーを退出しました")
+        if '退出通知' in channel.topic:
+            await channel.send(f" {member.name}さんがサーバーを退出したや...")
 @client.event
 async def on_message(message):
    if message.author.bot:
