@@ -135,6 +135,7 @@ async def on_message(message):
                    gencount += 1
                    pickle.dump(gencount, f)
                    print(gencount)
+               break
        if message.content.startswith("gen!google "):
            memog = message.content[11:].replace('@','＠')
            await message.reply(f'**Google検索結果**\nhttps://www.google.com/search?q={memog}')
