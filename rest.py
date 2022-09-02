@@ -179,6 +179,7 @@ async def on_message(message):
             embed.add_field(name="gen!getin <ID>", value="他のBotのIDからBotの招待リンクを発行するや...", inline=True)
             embed.add_field(name="gen!emoji <カスタム絵文字>", value="カスタム絵文字のURLを取得・表示するや...", inline=True)
             embed.add_field(name="gen!say <発言させる文章>", value="Botに代わって任意のメッセージを言うや...", inline=True)
+            embed.add_field(name="gen!safeweb <URL>", value="そのURLが安全かどうか調べるや...", inline=True)
             await message.reply(embed=embed)
        elif message.content == 'gen!playhelp':
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ お楽しみ", description="お楽しみや...", color=0xffffff)
@@ -247,6 +248,17 @@ async def on_message(message):
            json = res.json()
            se = json['shorturl']
            await message.reply(f"is.gdでURLを短縮しました！\n{se}")
+       elif message.content.startswith("gen!safeweb "):
+           test = message.content[12:]
+           link = f"https://safeweb.norton.com/report/show?url={test}&ulang=jpn"
+           r = requests.get(link)
+           soup = BeautifulSoup(r.text, 'html.parser')
+           title_text = soup.find('b').get_text(strip=True)
+           embed=discord.Embed(title=f"結果や...", color=0xffffff,description="[Powered by Norton Safeweb](https://safeweb.norton.com/)")
+           embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+           embed.add_field(name=f"診断結果", value=f"このサイトは{title_text}と判定されたや...", inline=True)
+           embed.set_footer(text=f"[SafeWebで見る]({link})")
+           await message.reply(embed=embed)
        # gen!timer
        elif message.content.startswith("gen!timer "):
            timer = int(message.content[10:])
