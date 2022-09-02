@@ -264,7 +264,7 @@ async def on_message(message):
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/hatena.png")
            elif title_text == "注意":
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/chuui.png")
-           embed.add_field(name=f"診断結果", value=f"このサイトは{title_text}と判定されたや...\n[SafeWebで見る]({link})", inline=True)
+           embed.add_field(name=f"診断結果", value=f"このサイトは**{title_text}**と判定されたや...\n[SafeWebで見る]({link})", inline=True)
            embed.set_footer(text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
            await message.reply(embed=embed)
        # gen!timer
