@@ -12,6 +12,7 @@ import requests
 import pandas as pd
 from datetime import datetime
 from discord.ext import tasks
+from bs4 import BeautifulSoup
 client = discord.Client(intents=discord.Intents.all())
 # Token file read.
 setting = open('token.txt', 'r').readlines()
