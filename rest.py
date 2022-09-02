@@ -255,10 +255,10 @@ async def on_message(message):
            r = requests.get(link)
            soup = BeautifulSoup(r.text, 'html.parser')
            title_text = soup.find('b').get_text(strip=True)
-           embed=discord.Embed(title=f"結果や...", color=0xffffff,description="[Powered by Norton Safeweb](https://safeweb.norton.com/)")
+           embed=discord.Embed(title=f"SafeWebの結果や...", color=0xffffff,description="[Powered by Norton Safeweb](https://safeweb.norton.com/)")
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-           embed.add_field(name=f"診断結果", value=f"このサイトは{title_text}と判定されたや...", inline=True)
-           embed.set_footer(text=f"[SafeWebで見る]({link})")
+           embed.add_field(name=f"診断結果", value=f"このサイトは{title_text}と判定されたや...\n[SafeWebで見る]({link})", inline=True)
+           embed.set_footer(text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
            await message.reply(embed=embed)
        # gen!timer
        elif message.content.startswith("gen!timer "):
