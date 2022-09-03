@@ -27,7 +27,7 @@ GLOBAL_CH_NAME = "限界やちゃっと"
 GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
 Updatedate = "2022年8月29日"
 startnotify_channel = "1010162569799028869"
-genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい"]
+genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい","くそ"]
 with open("./admins.txt") as f:
     admins = f.read()
 global gencount
