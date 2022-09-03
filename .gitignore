@@ -4,3 +4,5 @@ setting.txt
 user.txt
 # Gencount Data
 gencount.pickle
+# headless-chromium-binary
+headless-chromium
