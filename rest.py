@@ -259,7 +259,7 @@ async def on_message(message):
            if title_text == "危険":
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/kiken.png")
            elif title_text == "安全":
-               embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+               embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/genkaiya_jelly_droid_face.png")
            elif title_text == "未評価":
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/hatena.png")
            elif title_text == "注意":
