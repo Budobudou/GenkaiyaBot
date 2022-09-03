@@ -255,7 +255,7 @@ async def on_message(message):
            r = requests.get(link)
            soup = BeautifulSoup(r.text, 'html.parser')
            title_text = soup.find('b').get_text(strip=True)
-           embed=discord.Embed(title=f"{text}を診断してきたや...", color=0xffffff)
+           embed=discord.Embed(title=f"診断してきたや...", color=0xffffff)
            if title_text == "危険":
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/kiken.png")
            elif title_text == "安全":
