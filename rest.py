@@ -255,7 +255,7 @@ async def on_message(message):
            r = requests.get(link)
            soup = BeautifulSoup(r.text, 'html.parser')
            title_text = soup.find('b').get_text(strip=True)
-           embed=discord.Embed(title=f"SafeWebの結果や...", color=0xffffff)
+           embed=discord.Embed(title=f"{text}を診断してきたや...", color=0xffffff)
            if title_text == "危険":
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/kiken.png")
            elif title_text == "安全":
@@ -264,7 +264,7 @@ async def on_message(message):
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/hatena.png")
            elif title_text == "注意":
                embed.set_thumbnail(url="https://raw.githubusercontent.com/Budobudou/GenkaiyaBot/main/assets/chuui.png")
-           embed.add_field(name=f"診断結果", value=f"このサイトは**{title_text}**と判定されたや...\n[SafeWebで見る]({link})", inline=True)
+           embed.add_field(name=f"診断結果", value=f"このサイトは**{title_text}**と判定されたや...\n[詳細]({link})", inline=True)
            embed.set_footer(text=f"Powered by Norton Safeweb")
            await message.reply(embed=embed)
        # gen!timer
