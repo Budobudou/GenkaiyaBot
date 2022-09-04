@@ -138,7 +138,6 @@ async def on_message(message):
                        gencount += 1
                        pickle.dump(gencount, f)
                        print(gencount)
-                       global gencountedid
                        gencountid = message.author.id
                    break
        if message.content.startswith("gen!google "):
