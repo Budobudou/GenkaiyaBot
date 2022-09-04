@@ -30,7 +30,6 @@ startnotify_channel = "1010162569799028869"
 genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい","くそ"]
 with open("./admins.txt") as f:
     admins = f.read()
-global gencountedid
 global gencount
 # 限界カウンター Start
 try:
