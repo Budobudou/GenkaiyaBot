@@ -66,7 +66,10 @@ async def loop():
                 with open("gencount.pickle","wb") as f:
                     gencount = 0
                     pickle.dump(gencount, f)
-loop.start()
+
+l = asyncio.get_event_loop()
+l.run_until_complete(loop())
+
 @client.event
 
 async def on_ready():
@@ -307,12 +310,12 @@ async def on_message(message):
                try:
                    await webhook.send(content=content,
                        username=f"{message.author} from {message.guild}",
-                       avatar_url=message.author.avatar_url_as(format="png"),
+                       avatar_url=message.author.avatar,
                        embed=message.embeds[0])
                except:
                    await webhook.send(content=content,
                        username=f"{message.author} from {message.guild}",
-                       avatar_url=message.author.avatar_url_as(format="png"))
+                       avatar_url=message.author.avatar)
            try:
                await message.remove_reaction(loading_emoji, message.guild.me)
                await message.add_reaction("✅")
@@ -429,9 +432,9 @@ async def on_message(message):
            suser = re.sub(r"\D", "", message.content)
            user = await client.fetch_user(int(suser))
            embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
-           embed.set_thumbnail(url=user.avatar_url_as(static_format="png"))
+           embed.set_thumbnail(url=user.avatar)
            embed.set_footer(
-               text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
+               text=f"Requested by {message.author}", icon_url=message.author.avatar)
            embed.add_field(name="・ユーザー名", value=f"{user.name}", inline=False)
            embed.add_field(
                name="・ユーザータグ", value=f"#{user.discriminator}", inline=False)
@@ -443,9 +446,9 @@ async def on_message(message):
        # userinfo
        elif message.content == "gen!getserverinfo":
            embed = discord.Embed(title=f"{message.guild}の情報", color=0xffffff)
-           embed.set_thumbnail(url=message.guild.icon_url)
+           embed.set_thumbnail(url=message.guild.icon)
            embed.set_footer(
-               text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
+               text=f"Requested by {message.author}", icon_url=message.author.avatar)
            embed.add_field(name="・サーバー名", value=f"{message.guild.name}", inline=False)
            embed.add_field(
                name="・サーバーオーナー", value=f"{message.guild.owner}", inline=False)
