@@ -175,8 +175,8 @@ async def on_message(message):
             embed.add_field(name="gen!calc", value="計算コマンドリストを表示するや...", inline=True)
             embed.add_field(name="gen!google <検索ワード>", value="Google検索のURLを表示するや...", inline=True)
             embed.add_field(name="gen!ds <検索ワード>", value="Disboardでサーバーを検索するや...", inline=True)
-            embed.add_field(name="gen!getserverinfo", value="コマンドを実行したサーバーの情報を表示するや...", inline=True)
-            embed.add_field(name="gen!getuserinfo <メンションまたはID>", value="指定したユーザーの情報を表示するや...", inline=True)
+            embed.add_field(name="gen!server", value="コマンドを実行したサーバーの情報を表示するや...", inline=True)
+            embed.add_field(name="gen!user <メンションまたはID>", value="指定したユーザーの情報を表示するや...", inline=True)
             embed.add_field(name="gen!getin <ID>", value="他のBotのIDからBotの招待リンクを発行するや...", inline=True)
             embed.add_field(name="gen!emoji <カスタム絵文字>", value="カスタム絵文字のURLを取得・表示するや...", inline=True)
             embed.add_field(name="gen!say <発言させる文章>", value="Botに代わって任意のメッセージを言うや...", inline=True)
@@ -425,7 +425,7 @@ async def on_message(message):
            embed.add_field(name="招待リンクを作成しました！", value=adi, inline=False)
            await message.reply(embed=embed)
        # userinfo
-       elif message.content.startswith("gen!getuserinfo "):
+       elif message.content.startswith("gen!user "):
            suser = re.sub(r"\D", "", message.content)
            user = await client.fetch_user(int(suser))
            embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
@@ -441,7 +441,7 @@ async def on_message(message):
                value=f"{user.created_at}", inline=False)
            await message.reply(embed=embed)
        # userinfo
-       elif message.content == "gen!getserverinfo":
+       elif message.content == "gen!server":
            embed = discord.Embed(title=f"{message.guild}の情報", color=0xffffff)
            embed.set_thumbnail(url=message.guild.icon_url)
            embed.set_footer(
