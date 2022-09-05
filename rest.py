@@ -67,7 +67,6 @@ async def loop():
                     gencount = 0
                     pickle.dump(gencount, f)
 loop.start()
-
 @client.event
 
 async def on_ready():
@@ -129,15 +128,17 @@ async def on_message(message):
                if user_id == int(data[1]):
                    await message.add_reaction(Genkaiya_emoji)
            count += 1
-       for word in genkaiwordlist:
-           if word in message.content:
-               await message.add_reaction(Genkaiya_emoji)
-               with open("gencount.pickle","wb") as f:
-                   global gencount
-                   gencount += 1
-                   pickle.dump(gencount, f)
-                   print(gencount)
-               break
+       if not message.author.id == gencountedid:
+           for word in genkaiwordlist:
+               if word in message.content:
+                   await message.add_reaction(Genkaiya_emoji)
+                   with open("gencount.pickle","wb") as f:
+                       global gencount
+                       gencount += 1
+                       pickle.dump(gencount, f)
+                       print(gencount)
+                       gencountid = message.author.id
+                   break
        if message.content.startswith("gen!google "):
            memog = message.content[11:].replace('@','＠')
            await message.reply(f'**Google検索結果**\nhttps://www.google.com/search?q={memog}')
@@ -308,12 +309,12 @@ async def on_message(message):
                try:
                    await webhook.send(content=content,
                        username=f"{message.author} from {message.guild}",
-                       avatar_url=message.author.avatar,
+                       avatar_url=message.author.avatar_url_as(format="png"),
                        embed=message.embeds[0])
                except:
                    await webhook.send(content=content,
                        username=f"{message.author} from {message.guild}",
-                       avatar_url=message.author.avatar)
+                       avatar_url=message.author.avatar_url_as(format="png"))
            try:
                await message.remove_reaction(loading_emoji, message.guild.me)
                await message.add_reaction("✅")
@@ -430,9 +431,9 @@ async def on_message(message):
            suser = re.sub(r"\D", "", message.content)
            user = await client.fetch_user(int(suser))
            embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
-           embed.set_thumbnail(url=user.avatar)
+           embed.set_thumbnail(url=user.avatar_url_as(static_format="png"))
            embed.set_footer(
-               text=f"Requested by {message.author}", icon_url=message.author.avatar)
+               text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
            embed.add_field(name="・ユーザー名", value=f"{user.name}", inline=False)
            embed.add_field(
                name="・ユーザータグ", value=f"#{user.discriminator}", inline=False)
@@ -444,9 +445,9 @@ async def on_message(message):
        # userinfo
        elif message.content == "gen!getserverinfo":
            embed = discord.Embed(title=f"{message.guild}の情報", color=0xffffff)
-           embed.set_thumbnail(url=message.guild.icon)
+           embed.set_thumbnail(url=message.guild.icon_url)
            embed.set_footer(
-               text=f"Requested by {message.author}", icon_url=message.author.avatar)
+               text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
            embed.add_field(name="・サーバー名", value=f"{message.guild.name}", inline=False)
            embed.add_field(
                name="・サーバーオーナー", value=f"{message.guild.owner}", inline=False)
