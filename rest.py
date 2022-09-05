@@ -453,7 +453,9 @@ async def on_message(message):
            embed.add_field(
                name="・サーバーオーナー", value=f"{message.guild.owner}", inline=False)
            embed.add_field(name="・サーバーID", value=f"{message.guild.id}", inline=False)
-           embed.add_field(name="・カスタム絵文字", value=f"{len(message.guild.emojis)}個", inline=False)
+           embed.add_field(name="・カスタム絵文字の数", value=f"{len(message.guild.emojis)}/{message.guild.emoji_limit}", inline=False)
+           embed.add_field(name="・メンバーの数", value=f"{message.guild.member_count}人", inline=False)
+           embed.add_field(name="・システムチャンネル", value=f"{message.guild.system_channel}", inline=False)
            embed.add_field(name="・サーバーの作成日(UTC)",
                value=f"{message.guild.created_at}", inline=False)
            await message.reply(embed=embed)
