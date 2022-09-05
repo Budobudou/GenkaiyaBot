@@ -61,9 +61,7 @@ async def loop():
                 with open("gencount.pickle","wb") as f:
                     gencount = 0
                     pickle.dump(gencount, f)
-
-l = asyncio.get_event_loop()
-l.run_until_complete(loop())
+loop.start()
 @client.event
 async def on_ready():
     print("起動しました")
