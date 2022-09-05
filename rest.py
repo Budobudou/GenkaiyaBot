@@ -540,10 +540,6 @@ async def on_message(message):
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
             embed.add_field(name="詳細や...", value=f"権限エラーが発生しました。\nBotの権限を見直してください。", inline=False)
             await message.reply(embed=embed)
-   except:
-            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
-            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-            embed.add_field(name="詳細や...", value=f"不明なエラーが発生しました。\n詳しくは gen!resohelp からサポートサーバーに参加してください。", inline=False)
-            await message.reply(embed=embed)
+
 # TOKEN の 指定
 client.run(Token)
