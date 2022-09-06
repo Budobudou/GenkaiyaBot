@@ -248,7 +248,7 @@ async def on_message(message):
            res = requests.get(geturl)
            json = res.json()
            se = json['shorturl']
-           await message.reply(f"is.gdでURLを短縮しました！\n{se}")
+           await message.reply(f"is.gdでURLを短縮したや...\n{se}")
        elif message.content.startswith("gen!safeweb "):
            test = message.content[12:]
            link = f"https://safeweb.norton.com/report/show?url={test}&ulang=jpn"
