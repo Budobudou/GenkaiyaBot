@@ -518,7 +518,6 @@ async def on_message(message):
                    komoji = py.lower()
                    sharplink = f"https://jp.sharp/support/dictionary/product/{komoji}.html"
                    embed = discord.Embed(title=f"{search}の情報", color=0xffffff,description="その型番のBrainが見つかったんや...")
-                   embed.set_thumbnail(url=message.guild.icon_url)
                    embed.add_field(name="・発売時期", value=f"{hatubaiziki}", inline=False)
                    embed.add_field(name="・世代", value=f"{sedai}", inline=False)
                    embed.add_field(name="・モデル", value=f"{model}", inline=False)
