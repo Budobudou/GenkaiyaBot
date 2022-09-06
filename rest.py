@@ -10,6 +10,7 @@ import subprocess
 import psutil
 import requests
 import pandas as pd
+import csv
 from datetime import datetime
 from discord.ext import tasks
 from bs4 import BeautifulSoup
@@ -181,6 +182,7 @@ async def on_message(message):
             embed.add_field(name="g!emoji <カスタム絵文字>", value="カスタム絵文字のURLを取得・表示するや...", inline=True)
             embed.add_field(name="g!say <発言させる文章>", value="Botに代わって任意のメッセージを言うや...", inline=True)
             embed.add_field(name="g!safeweb <URL>", value="そのURLが安全かどうか調べるや...", inline=True)
+            embed.add_field(name="g!braincheck <Brainの型番>", value="電子辞書Brainの型番からスペックを表示するや...\n実行例:g!braincheck PW-SH2", inline=True)
             await message.reply(embed=embed)
        elif message.content == 'g!playhelp':
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ お楽しみ", description="お楽しみや...", color=0xffffff)
@@ -496,6 +498,39 @@ async def on_message(message):
                   await message.reply(f'```\n{kekka3}\n```')
           else:
               await message.channel.send('権限がないんや...') 
+       
+       elif message.content.startswith("g!braincheck"):
+           file = './brains.csv
+           numm = message.content[13:]
+           search = numm.upper()
+           f = open(file,'r',encoding="utf-8")
+           rows = csv.reader(f)
+           for row in rows: # for文で行を1つずつ取り出す(5)
+               py = row[0]
+               if py == search:
+                   hatubaiziki = row[1]
+                   sedai = (f"{row[2]}世代")
+                   model = row[3]
+                   cpu = row[4]
+                   display = (f"サイズ:{row[6]}  解像度:{row[7]}")
+                   battery = (f"形式:{row[8]}  駆動時間:{row[9]}")
+                   os = row[12]
+                   komoji = py.lower()
+                   sharplink = f"https://jp.sharp/support/dictionary/product/{komoji}.html"
+                   embed = discord.Embed(title=f"{search}の情報", color=0xffffff,description="その型番のBrainが見つかったんや...")
+                   embed.set_thumbnail(url=message.guild.icon_url)
+                   embed.add_field(name="・発売時期", value=f"{hatubaiziki}", inline=False)
+                   embed.add_field(name="・世代", value=f"{sedai}", inline=False)
+                   embed.add_field(name="・モデル", value=f"{model}", inline=False)
+                   embed.add_field(name="・CPU", value=f"{cpu}", inline=False)
+                   embed.add_field(name="・ディスプレイ", value=f"{display}", inline=False)
+                   embed.add_field(name="・バッテリー", value=f"{battery}", inline=False)
+                   embed.add_field(name="・OS",value=f"{os}", inline=False)
+                   embed.add_field(name="・公式紹介ページ",value=f"{sharplink}", inline=False)
+                   embed.set_footer(text=f"データ:Brainスペック一覧 by Brain Hackers")
+                   await message.reply(embed=embed)
+                   break
+           f.close() 
        #じゃんけん
        elif message.content == "g!janken":
             await message.reply("最初はグー、じゃんけん ※ぐー、ちょき、ぱー、の中から発言してや...")
