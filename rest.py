@@ -500,7 +500,7 @@ async def on_message(message):
               await message.channel.send('権限がないんや...') 
        
        elif message.content.startswith("g!braincheck"):
-           file = './brains.csv
+           file = './brains.csv'
            numm = message.content[13:]
            search = numm.upper()
            f = open(file,'r',encoding="utf-8")
