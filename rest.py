@@ -18,14 +18,14 @@ client = discord.Client(intents=discord.Intents.all())
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
 # 環境設定
-Version = "1.3rb"
+Version = "1.4rb"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
 invite_link = f"https://discord.com/api/oauth2/authorize?client_id=1008709839683334186&permissions=52304&scope=applications.commands%20bot"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 loading_emoji = "<a:loading:1011568375748636772>"
 GLOBAL_CH_NAME = "限界やちゃっと"
 GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
-Updatedate = "2022年8月29日"
+Updatedate = "2022年9月06日"
 startnotify_channel = "1010162569799028869"
 genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい","くそ"]
 with open("./admins.txt") as f:
@@ -221,8 +221,8 @@ async def on_message(message):
        elif message.content == 'g!updateinfo':
            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}リソース ＞ アップデート情報", description="このBotのアップデート情報を表示するや...", color=0xffffff)
            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-           embed.add_field(name="バージョン", value="1.3rb", inline=False)
-           embed.add_field(name="更新内容", value="・helpの修正と安定性向上\nエラーメッセージの追加", inline=False)
+           embed.add_field(name="バージョン", value="1.4rb", inline=False)
+           embed.add_field(name="更新内容", value="・一部のコマンドの項目を更新\nプレフィックスを変更", inline=False)
            embed.set_footer(text=f"更新日：{Updatedate}")
            await message.reply(embed=embed)
        elif message.content == 'g!rehelp':
@@ -241,7 +241,9 @@ async def on_message(message):
            embed.add_field(name="ライセンス情報", value="g!license", inline=True)
            embed.set_footer(text=f"バージョン {Version}")
            await message.reply(embed=embed)
-       
+       elif message.content == 'gen!help':
+           embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ お知らせ ", description="プレフィックスが変わったや...\nまずは g!help と発言してみてや...", color=0xffffff)
+           embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")  
        elif message.content.startswith("g!shorturl "):
            timer = message.content[11:]
            geturl = f"https://is.gd/create.php?format=simple&format=json&url={timer}"
