@@ -1,87 +1,87 @@
-﻿機種名,発売,世代,モデル,CPU,本体メモリ,液晶サイズ,液晶解像度,電源,連続表示時間,サイズ,重さ,OS
-PW-AC830,2008.08,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145x107.95x21.5,360g,Microsoft Windows Embedded CE 6.0 Core
-PW-AC880,2008.08,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145x107.95x21.5,360g,Microsoft Windows Embedded CE 6.0 Core
-PW-TC980,2008.12,1,その他,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x107.95x22.4,379g,Microsoft Windows Embedded CE 6.0 Core
-PW-GC590,2009.01,1,高校生,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x108.0x22.4,360g,Microsoft Windows Embedded CE 6.0 Core
-PW-AC890,2009.01,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x108.0x22.4,360g,Microsoft Windows Embedded CE 6.0 Core
-PW-AC900,2009.07,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x108.0x22.4,358g,Microsoft Windows Embedded CE 6.0 Core
-PW-GC610,2010.01,1,高校生,TMPA910CRAXBG,300MB,5型,480x320,リチウムイオン充電池,100時間,145.6x105.3x20.8,324g,Microsoft Windows Embedded CE 6.0 Core
-PW-AC910,2010.01,1,生活・教養,TMPA910CRAXBG,300MB,5型,480x320,リチウムイオン充電池,100時間,145.6x105.3x20.8,324g,Microsoft Windows Embedded CE 6.0 Core
-PW-AC920,2010.08,1,生活・教養,TMPA910CRAXBG,300MB,5型,480x320,リチウムイオン充電池,100時間,145.6x105.3x20.8,324g,Microsoft Windows Embedded CE 6.0 Core
-PW-G4000,2011.01,1,中学生,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core
-PW-G5000,2011.01,1,高校生,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core
-PW-HC1,2011.xx,1,学校専売,不明,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-A9000,2011.01,1,大学生・ビジネス,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core
-PW-A7000,2011.01,1,生活・教養,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core
-PW-G5100,2011.08,1,高校生,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core
-PW-G4200,2012.xx,2,中学生,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core
-PW-G5200,2012.01,2,高校生,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core
-PW-HC2,2012.xx,2,学校専売,不明,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-A9200,2012.xx,2,大学生・ビジネス,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core
-PW-A7200,2012.xx,2,生活・教養,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core
-PW-A7300,2012.xx,2,生活・教養,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core
-PW-GX500,2012.xx,2,その他,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-G5300,2013.xx,2,高校生,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-HC3,2013.xx,2,学校専売,不明,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-A9300,2013.xx,2,大学生・ビジネス,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-A9100,2013.xx,2,生活・教養,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-GX300,2013.xx,2,その他,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-G5300,2013.01,2,高校生,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core
-PW-A9300,2013.01,2,大学生・ビジネス,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-A7400,2013.xx,2,生活・教養,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SJ1,2014.02,3,中学生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core
-PW-SH1,2014.02,3,高校生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core
-PW-HC4,2014.02,3,学校専売,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core
-PW-SB1,2014.02,3,大学生・ビジネス,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core
-PW-SA1,2014.02,3,生活・教養,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core
-PW-SR1,2014.xx,3,シニア,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SJ2,2015.02,3,中学生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-SH2,2015.02,3,高校生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-HC5,2015.xx,3,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SB2,2015.02,3,大学生・ビジネス,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-SA2,2015.02,3,生活・教養,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-SJ3,2016.01,3,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-SH3,2016.01,3,高校生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-HC6,2016.xx,3,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SB3,2016.01,3,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-SA3,2016.01,3,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core
-PW-SJ4,2017.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core
-PW-SH4,2017.01,4,高校生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core
-PW-H7700,2017.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SB4,2017.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core
-PW-SA4,2017.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core
-PW-SR2,2017.xx,4,シニア,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SJ5,2018.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core
-PW-SH5,2018.01,4,高校生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core
-PW-H7800,2018.01,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SB5,2018.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core
-PW-SA5,2018.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core
-PW-AJ1,2018.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core
-PW-AA1,2018.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core
-PW-SH6,2019.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-SS6,2019.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-H8000,2019.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SB6,2019.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-AJ2,2019.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-AA2,2019.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-SH7,2020.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-SS7,2020.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-H8100,2020.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-H9100,2020.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-SB7,2020.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core
-PW-SR3,2020.xx,4,シニア,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core
-PW-J1,2021.02,5,中学生,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-H1,2021.02,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-S1,2021.02,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-ES8200,2021.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明
-PW-ES9200,2021.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明
-PW-B1,2021.02,5,大学生・ビジネス,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-A1,2021.02,5,生活・教養,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-J2,2022.02,5,中学生,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-H2,2022.01,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-S2,2022.01,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-ES8300,2022.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明
-PW-ES9300,2022.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明
-PW-B2,2022.01,5,大学生・ビジネス,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-A2,2022.02,5,生活・教養,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
-PW-SR4,2022.xx,5,シニア,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明
+﻿機種名,発売,世代,モデル,CPU,本体メモリ,液晶サイズ,液晶解像度,電源,連続表示時間,サイズ,重さ,OS,RAM
+PW-AC830,2008.08,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145x107.95x21.5,360g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-AC880,2008.08,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145x107.95x21.5,360g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-TC980,2008.12,1,その他,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x107.95x22.4,379g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-GC590,2009.01,1,高校生,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x108.0x22.4,360g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-AC890,2009.01,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x108.0x22.4,360g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-AC900,2009.07,1,生活・教養,TMPA910CRAXBG,100MB,5型,480x320,リチウムイオン充電池,80時間,145.0x108.0x22.4,358g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-GC610,2010.01,1,高校生,TMPA910CRAXBG,300MB,5型,480x320,リチウムイオン充電池,100時間,145.6x105.3x20.8,324g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-AC910,2010.01,1,生活・教養,TMPA910CRAXBG,300MB,5型,480x320,リチウムイオン充電池,100時間,145.6x105.3x20.8,324g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-AC920,2010.08,1,生活・教養,TMPA910CRAXBG,300MB,5型,480x320,リチウムイオン充電池,100時間,145.6x105.3x20.8,324g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-G4000,2011.01,1,中学生,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-G5000,2011.01,1,高校生,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-HC1,2011.xx,1,学校専売,不明,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-A9000,2011.01,1,大学生・ビジネス,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-A7000,2011.01,1,生活・教養,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-G5100,2011.08,1,高校生,TMPA910CRAXBG,300MB,5型,480x320,単3アルカリ2本,150時間,149x114.3x19.7,348g,Microsoft Windows Embedded CE 6.0 Core,64MB
+PW-G4200,2012.xx,2,中学生,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-G5200,2012.01,2,高校生,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-HC2,2012.xx,2,学校専売,不明,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-A9200,2012.xx,2,大学生・ビジネス,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-A7200,2012.xx,2,生活・教養,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-A7300,2012.xx,2,生活・教養,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-GX500,2012.xx,2,その他,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-G5300,2013.xx,2,高校生,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-HC3,2013.xx,2,学校専売,不明,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-A9300,2013.xx,2,大学生・ビジネス,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-A9100,2013.xx,2,生活・教養,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-GX300,2013.xx,2,その他,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-G5300,2013.01,2,高校生,i.MX283,150MB,5型,480x320,単3アルカリ2本,130時間,149x110.2x19.4,305g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-A9300,2013.01,2,大学生・ビジネス,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-A7400,2013.xx,2,生活・教養,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SJ1,2014.02,3,中学生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SH1,2014.02,3,高校生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-HC4,2014.02,3,学校専売,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SB1,2014.02,3,大学生・ビジネス,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SA1,2014.02,3,生活・教養,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,50時間,152.4x96.5x18.8,295g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SR1,2014.xx,3,シニア,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SJ2,2015.02,3,中学生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SH2,2015.02,3,高校生,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-HC5,2015.xx,3,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SB2,2015.02,3,大学生・ビジネス,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SA2,2015.02,3,生活・教養,i.MX283,500MB,5.2型,800x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SJ3,2016.01,3,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SH3,2016.01,3,高校生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-HC6,2016.xx,3,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SB3,2016.01,3,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SA3,2016.01,3,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,70時間,152.4x96.5x18.7,300g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SJ4,2017.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SH4,2017.01,4,高校生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-H7700,2017.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SB4,2017.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SA4,2017.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,100時間,152.4x96.5x18.4,290g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SR2,2017.xx,4,シニア,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SJ5,2018.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SH5,2018.01,4,高校生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-H7800,2018.01,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SB5,2018.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SA5,2018.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-AJ1,2018.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-AA1,2018.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,120時間,152.4x96.5x18.4,270g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SH6,2019.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SS6,2019.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-H8000,2019.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SB6,2019.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-AJ2,2019.01,4,中学生,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-AA2,2019.01,4,生活・教養,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,130時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SH7,2020.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SS7,2020.01,4,高校生,i.MX283,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-H8100,2020.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-H9100,2020.xx,4,学校専売,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SB7,2020.01,4,大学生・ビジネス,i.MX283,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,265g,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-SR3,2020.xx,4,シニア,i.MX283,不明,不明,不明,不明,不明,不明,不明,Microsoft Windows Embedded CE 6.0 Core,128MB
+PW-J1,2021.02,5,中学生,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-H1,2021.02,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-S1,2021.02,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-ES8200,2021.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明,128MB
+PW-ES9200,2021.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明,128MB
+PW-B1,2021.02,5,大学生・ビジネス,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-A1,2021.02,5,生活・教養,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-J2,2022.02,5,中学生,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-H2,2022.01,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-S2,2022.01,5,高校生,i.MX7,200MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-ES8300,2022.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明,128MB
+PW-ES9300,2022.xx,5,学校専売,i.MX7,不明,不明,不明,不明,不明,不明,不明,不明,128MB
+PW-B2,2022.01,5,大学生・ビジネス,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-A2,2022.02,5,生活・教養,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
+PW-SR4,2022.xx,5,シニア,i.MX7,500MB,5.5型,854x480,リチウムイオン充電池,140時間,152.4x94.5x18.4,260g,不明,128MB
