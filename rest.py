@@ -501,6 +501,7 @@ async def on_message(message):
        
        elif message.content.startswith("g!braincheck"):
            file = './brains.csv'
+           atta = 0
            numm = message.content[13:]
            search = numm.upper()
            f = open(file,'r',encoding="utf-8")
@@ -531,8 +532,12 @@ async def on_message(message):
                    embed.add_field(name="・公式紹介ページ",value=f"{sharplink}", inline=False)
                    embed.set_footer(text=f"データ:Brainスペック一覧 by Brain Hackers")
                    await message.reply(embed=embed)
+                   atta = 1
                    break
            f.close() 
+           if atta = 0:
+                   embed = discord.Embed(title=f"その型番は見つからなかったや...", color=0xffffff)
+                   await message.reply(embed=embed)
        #じゃんけん
        elif message.content == "g!janken":
             await message.reply("最初はグー、じゃんけん ※ぐー、ちょき、ぱー、の中から発言してや...")
