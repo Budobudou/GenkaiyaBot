@@ -535,7 +535,7 @@ async def on_message(message):
                    atta = 1
                    break
            f.close() 
-           if atta = 0:
+           if atta == 0:
                    embed = discord.Embed(title=f"その型番は見つからなかったや...", color=0xffffff)
                    await message.reply(embed=embed)
        #じゃんけん
