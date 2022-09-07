@@ -516,6 +516,7 @@ async def on_message(message):
                    display = (f"サイズ:{row[6]}  解像度:{row[7]}")
                    battery = (f"形式:{row[8]}  駆動時間:{row[9]}")
                    os = row[12]
+                   mem = (f"保存用ストレージ{row[5]} RAM:{row[13]}")
                    komoji = py.lower()
                    sharplink = f"https://jp.sharp/support/dictionary/product/{komoji}.html"
                    bimage1 = komoji.replace('-','')
@@ -526,6 +527,7 @@ async def on_message(message):
                    embed.add_field(name="・世代", value=f"{sedai}", inline=False)
                    embed.add_field(name="・モデル", value=f"{model}", inline=False)
                    embed.add_field(name="・CPU", value=f"{cpu}", inline=False)
+                   embed.add_field(name="・メモリ", value=f"{mem}", inline=False)
                    embed.add_field(name="・ディスプレイ", value=f"{display}", inline=False)
                    embed.add_field(name="・バッテリー", value=f"{battery}", inline=False)
                    embed.add_field(name="・OS",value=f"{os}", inline=False)
