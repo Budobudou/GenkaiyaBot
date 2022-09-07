@@ -516,7 +516,7 @@ async def on_message(message):
                    display = (f"サイズ:{row[6]}  解像度:{row[7]}")
                    battery = (f"形式:{row[8]}  駆動時間:{row[9]}")
                    os = row[12]
-                   mem = (f"保存用ストレージ{row[5]} RAM:{row[13]}")
+                   mem = (f"ストレージ:{row[5]}\nRAM:{row[13]}")
                    komoji = py.lower()
                    sharplink = f"https://jp.sharp/support/dictionary/product/{komoji}.html"
                    bimage1 = komoji.replace('-','')
