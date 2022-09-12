@@ -47,7 +47,7 @@ except FileNotFoundError:
         print("gencount ファイルを作成したから再起動するや...")
         python = sys.executable
         os.execl(python,python, * sys.argv)
-print(' --===Powered Re:StrawberryBot System===-- ')
+print(' --===Powered by Re:StrawberryBot System===-- ')
 print('準備中...')
 @tasks.loop(seconds=60)
 async def loop():
@@ -432,7 +432,7 @@ async def on_message(message):
        elif message.content.startswith("g!user "):
            suser = re.sub(r"\D", "", message.content)
            user = await client.fetch_user(int(suser))
-           genzai = datetime.now() - user.created_at
+           genzai = datetime.utcnow() - user.created_at
            genzai2 = genzai.days
            embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
            embed.set_thumbnail(url=user.avatar_url_as(static_format="png"))
@@ -444,11 +444,13 @@ async def on_message(message):
            embed.add_field(name="・ユーザーID", value=f"{user.id}", inline=False)
            embed.add_field(name="・BOTか", value=f"{user.bot}", inline=False)
            embed.add_field(name="・アカウントの作成日(UTC)",
-               value=f"{user.created_at}({genzai2}日前)", inline=False)
+               value=f"{user.created_at}\n({genzai2}日前)", inline=False)
            await message.reply(embed=embed)
        # userinfo
        elif message.content == "g!server":
            embed = discord.Embed(title=f"{message.guild}の情報", color=0xffffff)
+           genzai = datetime.now() - message.guild.created_at
+           genzai2 = genzai.days
            embed.set_thumbnail(url=message.guild.icon_url)
            embed.set_footer(
                text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
@@ -460,7 +462,7 @@ async def on_message(message):
            embed.add_field(name="・メンバーの数", value=f"{message.guild.member_count}人", inline=False)
            embed.add_field(name="・システムチャンネル", value=f"{message.guild.system_channel}", inline=False)
            embed.add_field(name="・サーバーの作成日(UTC)",
-               value=f"{message.guild.created_at}", inline=False)
+               value=f"{message.guild.created_at}\n({genzai2}日前", inline=False)
            await message.reply(embed=embed)
        #surl
        elif message.content.startswith("g!sdlurl "):
