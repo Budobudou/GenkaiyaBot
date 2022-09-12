@@ -432,6 +432,8 @@ async def on_message(message):
        elif message.content.startswith("g!user "):
            suser = re.sub(r"\D", "", message.content)
            user = await client.fetch_user(int(suser))
+           genzai = datetime.now() - user.created_at
+           genzai2 = genzai.days
            embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
            embed.set_thumbnail(url=user.avatar_url_as(static_format="png"))
            embed.set_footer(
@@ -442,7 +444,7 @@ async def on_message(message):
            embed.add_field(name="・ユーザーID", value=f"{user.id}", inline=False)
            embed.add_field(name="・BOTか", value=f"{user.bot}", inline=False)
            embed.add_field(name="・アカウントの作成日(UTC)",
-               value=f"{user.created_at}", inline=False)
+               value=f"{user.created_at}({genzai2}日前)", inline=False)
            await message.reply(embed=embed)
        # userinfo
        elif message.content == "g!server":
