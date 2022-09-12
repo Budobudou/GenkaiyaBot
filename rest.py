@@ -462,7 +462,7 @@ async def on_message(message):
            embed.add_field(name="・メンバーの数", value=f"{message.guild.member_count}人", inline=False)
            embed.add_field(name="・システムチャンネル", value=f"{message.guild.system_channel}", inline=False)
            embed.add_field(name="・サーバーの作成日(UTC)",
-               value=f"{message.guild.created_at}\n({genzai2}日前", inline=False)
+               value=f"{message.guild.created_at}\n({genzai2})日前", inline=False)
            await message.reply(embed=embed)
        #surl
        elif message.content.startswith("g!sdlurl "):
