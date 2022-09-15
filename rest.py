@@ -141,7 +141,8 @@ async def on_message(message):
        if message.content.startswith("g!google "):
            memog = message.content[9:].replace('@','＠')
            await message.reply(f'**Google検索結果**\nhttps://www.google.com/search?q={memog}')
-           
+       elif 'ｱﾋｬ' in message.content:
+           await message.reply('( ﾟ∀ﾟ)ｱﾋｬ...')
        #ping
        elif message.content == 'g!ping':
            raw_ping = client.latency
