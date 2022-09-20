@@ -252,7 +252,7 @@ async def toolhelp(ctx):
     await ctx.reply(embed=embed)
 
 @client.command()
-async def playlhelp(ctx):
+async def playhelp(ctx):
     embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ お楽しみ", description="お楽しみや...", color=0xffffff)
     embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
     embed.add_field(name="g!janken", value="ジャンケンをするや...", inline=True)
@@ -628,6 +628,11 @@ async def on_command_error(ctx,exception):
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
             embed.add_field(name="詳細や...", value=f"引数エラーが発生しました。\nコマンドの使い方はあっていますか？", inline=False)
+            await ctx.reply(embed=embed)
+        elif isinstance(exception,commands.CommandNotFound):
+            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            embed.add_field(name="詳細や...", value=f"コマンドが存在しません。\ng!helpを参照してください。", inline=False)
             await ctx.reply(embed=embed)
         elif isinstance(exception,commands.BotMissingPermissions):
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したのでコマンドを停止したや...", color=0xffffff)
