@@ -387,31 +387,33 @@ async def say(ctx, msg1):
 
 @client.command()
 async def calc(ctx, mode: typing.Optional[str], moto: typing.Optional[int], saki: typing.Optional[int]):
-    await ctx.reply('🥽四則演算コマンドリスト \n コマンドの使用例(足し算の場合):g!calc + 99 1 \n >計算結果：100 \n ======== \n g!calc + 足し算 \n g!calc- 引き算 \n g!calc * 掛け算  \n g!calc / 割り算 \n g!calc . 小数点以下切り捨ての割り算 \n g!calc % 割り算あまり')
-    if mode == "+":
-        #sisoku
-        kekka = moto + saki
-        await ctx.reply(f"計算結果：\n {kekka}")
-    elif mode == "-":
-        #sisoku
-        kekka = moto - saki
-        await ctx.reply(f"計算結果：\n {kekka}")
-    elif mode == "*":
-        #sisoku
-        kekka = moto * saki
-        await ctx.reply(f"計算結果：\n {kekka}")
-    elif mode == "/":
-        #sisoku
-        kekka = moto / saki
-        await ctx.reply(f"計算結果：\n {kekka}")
-    elif mode == ".":
-        #sisoku
-        kekka = moto // saki
-        await ctx.reply(f"計算結果：\n {kekka}")
-    elif mode == "%":
-        # sisoku
-        kekka = moto % saki
-        await ctx.reply(f"計算結果：\n {kekka}")
+    if not mode:
+        await ctx.reply('🥽四則演算コマンドリスト \n コマンドの使用例(足し算の場合):g!calc + 99 1 \n >計算結果：100 \n ======== \n g!calc + 足し算 \n g!calc- 引き算 \n g!calc * 掛け算  \n g!calc / 割り算 \n g!calc . 小数点以下切り捨ての割り算 \n g!calc % 割り算あまり')
+    else:
+        if mode == "+":
+            #sisoku
+            kekka = moto + saki
+            await ctx.reply(f"計算結果：\n {kekka}")
+        elif mode == "-":
+            #sisoku
+            kekka = moto - saki
+            await ctx.reply(f"計算結果：\n {kekka}")
+        elif mode == "*":
+            #sisoku
+            kekka = moto * saki
+            await ctx.reply(f"計算結果：\n {kekka}")
+        elif mode == "/":
+            #sisoku
+            kekka = moto / saki
+            await ctx.reply(f"計算結果：\n {kekka}")
+        elif mode == ".":
+            #sisoku
+            kekka = moto // saki
+            await ctx.reply(f"計算結果：\n {kekka}")
+        elif mode == "%":
+            # sisoku
+            kekka = moto % saki
+            await ctx.reply(f"計算結果：\n {kekka}")
 
 @client.command()
 async def embed(ctx, titles, nan):
