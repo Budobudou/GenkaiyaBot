@@ -12,7 +12,10 @@ https://discord.com/api/oauth2/authorize?client_id=1008709839683334186&permissio
 ```text
 MYTokenwOTgzXOV8MzMzNGI3Ng.GINUGJG.9XxcMEzV1ZsXWpNsA_n6jPzGKathY58LZj_JQ #YourToken
 ```
+## 動作環境
+Python 3.x
 
+Discord.py 1.7.3
 ## Command
 
 `gen!ping` - ボットのping値を取得します
