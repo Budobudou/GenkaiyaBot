@@ -353,26 +353,26 @@ async def globalhelp(ctx):
 @client.command()
 async def dice(ctx):
     #dice
-    dice = random.randint(1, 6)
+    dice = r.randint(1, 6)
     await ctx.reply(f"🎲{dice}や...!")
 
 @client.command()
 async def cdice(ctx):
     # dice
     ms = int(ctx.message.content[8:])
-    dice = random.randint(1, ms)
+    dice = r.randint(1, ms)
     await ctx.reply(f"🎲{dice}や...!")
 
 @client.command()
 async def roulette(ctx):
     #dice
-    roulette = random.randint(1, 100)
+    roulette = r.randint(1, 100)
     await ctx.reply(f"{roulette}や...!")
 
 @client.command()
 async def cointoss(ctx):
     #cointoss
-    cointoss = random.randint(0, 1)
+    cointoss = r.randint(0, 1)
     if cointoss == 1:
         await ctx.reply("📀表や...")
     elif cointoss == 0:
@@ -502,7 +502,7 @@ async def emoji(ctx, emoji):
 async def random(ctx):
     df = pd.read_csv('genkaiya.csv')
     images = df['url']
-    image_url = random.choice(images)
+    image_url = r.choice(images)
     await ctx.reply(image_url)
 
 @client.command()
@@ -565,10 +565,10 @@ async def janken(ctx):
     #じゃんけん
     await ctx.reply("最初はグー、じゃんけん ※ぐー、ちょき、ぱー、の中から発言してや...")
 
-    jkbot = random.choice(("ぐー", "ちょき", "ぱー"))
+    jkbot = r.choice(("ぐー", "ちょき", "ぱー"))
     draw = "引き分けや..."
     wn = "君の勝ちや..."
-    lst = random.choice(("僕の勝ちや...！やったやwwwwwwwwwww","僕の勝ちや..."))
+    lst = r.choice(("僕の勝ちや...！やったやwwwwwwwwwww","僕の勝ちや..."))
 
     def jankencheck(m):
         return (m.author == ctx.author) and (m.content in ['ぐー', 'ちょき', 'ぱー'])
