@@ -47,158 +47,18 @@ GLOBAL_CH_NAME = "限界やちゃっと"
 GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
 Updatedate = "2022年9月06日"
 startnotify_channel = "1010162569799028869"
-genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい","くそ"]
 
 with open("./admins.txt") as f:
     admins = f.read()
-global gencount
-# 限界カウンター Start
-try:
-    with open('gencount.pickle', 'rb') as f:
-      try:
-          gencount = pickle.load(f)
-      except EOFError:
-          gencount = 0
-except FileNotFoundError:
-    with open("gencount.pickle","wb") as f:
-        gencount = 0
-        pickle.dump(gencount, f)
-        print("gencount ファイルを作成したから再起動するや...")
-        python = sys.executable
-        os.execl(python,python, * sys.argv)
 print(' --===Powered by Re:StrawberryBot System===-- ')
 print('準備中...')
-
-@tasks.loop(seconds=60)
-async def loop():
-    # 現在の時刻
-    now = datetime.now().strftime('%H:%M')
-    print(now)
-    if now == '22:00':
-        ch_name = "限界やちゃっと"
-        global gencount
-        msg = f"今日の全世界での限界やちゃん出現数は{gencount}回や...！\n明日はどうなるかや...おやすみや..."
-        for channel in client.get_all_channels():
-            if channel.name == ch_name:
-                try:
-                    await channel.send(msg)
-                except discord.errors.Forbidden:
-                    pass
-                with open("gencount.pickle","wb") as f:
-                    gencount = 0
-                    pickle.dump(gencount, f)
-loop.start()
 
 @client.event
 async def on_ready():
     print("起動しました")
     serversuu = len(client.guilds)
-    await client.change_presence(activity=discord.Game(name=r.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...","コマンド一覧の表示はg!helpを入力してや...","g!randomと打ってみてや...","「限界や」と言ってみてや..."))
-))
     notify = await client.fetch_channel(startnotify_channel)
     await notify.send("起動したや...")
-#関数
-async def create_channel(message, channel_name):
-    category_id = message.channel.category_id
-    category = message.guild.get_channel(category_id)
-    new_channel = await category.create_text_channel(name=channel_name)
-    return new_channel
-#リプライ
-async def reply2(message):
-    reply2 = f'{message.author.mention} 限界や... \n ||コマンド一覧はg!helpで表示されるや...||' # 返信メッセージの作成
-    await message.reply(reply2) # 返信メッセージを送信
-#サーバーに招待されたとき
-
-@client.event
-async def on_guild_join(guild):
-    channel = guild.system_channel
-    await channel.send("**初めまして！限界やBotや...** \n コマンド一覧は g!help と発言してくれや...\n困った場合はg!resohelpでサポートサーバーに入ってくれや...")
-    cchannel = client.get_channel(739108586025648158)
-    await cchannel.send(f"```{guild.name}```\nにBotが導入されました!")
-
-@client.event
-async def on_guild_remove(guild):
-    cchannel = client.get_channel(739108586025648158)
-    await cchannel.send(f"```{guild.name}```\nが逃げたぞ!")
-
-# メッセージ受信時に動作する処理
-@client.event
-async def on_member_remove(member):
-    for channel in member.guild.channels:
-        try:
-            if '退出通知' in channel.topic:
-                await channel.send(f" {member.name}さんがサーバーを退出したや...")
-        except:
-            pass
-
-@client.event
-async def on_message(message):
-    if message.author.bot:
-        return
-    elif 'ｱﾋｬ' in message.content:
-        await message.reply('( ﾟ∀ﾟ)ｱﾋｬ...')
-    #mension
-    elif client.user in message.mentions: # 話しかけられたかの判定
-        await reply2(message) # 返信する非同期関数を実行
-    if message.author.bot or message.author.discriminator == "0000":
-        return
-    user_data_text = open('user.txt', 'r')
-    user_data = user_data_text.readlines()
-    user_data_text.close()
-    count = 0
-    for raw_data in user_data:
-        server_id = message.guild.id
-        user_id = message.author.id
-        data = raw_data.split(",")
-        if count > 100:
-            break
-        elif server_id == int(data[0]):
-            if user_id == int(data[1]):
-                await message.add_reaction(Genkaiya_emoji)
-        count += 1
-    for word in genkaiwordlist:
-        if word in message.content:
-            await message.add_reaction(Genkaiya_emoji)
-            with open("gencount.pickle","wb") as f:
-                global gencount
-                gencount += 1
-                pickle.dump(gencount, f)
-                print(gencount)
-            break
-    if message.channel.name == GLOBAL_CH_NAME:
-        channels = client.get_all_channels()
-        global_channels = [ch for ch in channels if ch.name == GLOBAL_CH_NAME]
-        try:
-           await message.add_reaction(loading_emoji)
-        except:pass
-        for channel in global_channels:
-            if channel.id == message.channel.id:continue
-            try:
-              ch_webhooks = await channel.webhooks()
-            except discord.errors.Forbidden:continue
-            if ch_webhooks == []:
-                try:webhook = await channel.create_webhook(name=GLOBAL_WEBHOOK_NAME, reason=f"{GLOBAL_CH_NAME}の為にwebhook作成したや...")
-                except:continue
-            else:
-                webhook = ch_webhooks[0]
-                content = message.content.replace("@", "＠")
-                if content == "":content = "メッセージ内容がありません"
-                for attachment in message.attachments:
-                    content = content + "\n" + attachment.url
-                try:
-                    await webhook.send(content=content,
-                        username=f"{message.author} from {message.guild}",
-                        avatar_url=message.author.avatar_url_as(format="png"),
-                        embed=message.embeds[0])
-                except:
-                    await webhook.send(content=content,
-                        username=f"{message.author} from {message.guild}",
-                        avatar_url=message.author.avatar_url_as(format="png"))
-            try:
-                await message.remove_reaction(loading_emoji, message.guild.me)
-                await message.add_reaction("✅")
-            except:pass
-    await client.process_commands(message)
 
 @client.command()
 async def google(ctx, memog):
@@ -355,9 +215,8 @@ async def dice(ctx):
     await ctx.reply(f"🎲{dice}や...!")
 
 @client.command()
-async def cdice(ctx):
+async def cdice(ctx, ms):
     # dice
-    ms = int(ctx.message.content[8:])
     dice = r.randint(1, ms)
     await ctx.reply(f"🎲{dice}や...!")
 
@@ -440,9 +299,9 @@ async def user(ctx, user: User = None):
     genzai = datetime.utcnow() - user.created_at
     genzai2 = genzai.days
     embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
-    embed.set_thumbnail(url=user.avatar_url_as(static_format="png"))
+    embed.set_thumbnail(url=user.avatar)
     embed.set_footer(
-        text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar_url)
+        text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar)
     embed.add_field(name="・ユーザー名", value=f"{user.name}", inline=False)
     embed.add_field(
         name="・ユーザータグ", value=f"#{user.discriminator}", inline=False)
@@ -459,9 +318,9 @@ async def server(ctx):
     embed = discord.Embed(title=f"{ctx.guild}の情報", color=0xffffff)
     genzai = datetime.now() - guild.created_at
     genzai2 = genzai.days
-    embed.set_thumbnail(url=guild.icon_url)
+    embed.set_thumbnail(url=guild.icon)
     embed.set_footer(
-        text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar_url)
+        text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar)
     embed.add_field(name="・サーバー名", value=f"{guild.name}", inline=False)
     embed.add_field(
         name="・サーバーオーナー", value=f"{guild.owner}", inline=False)
