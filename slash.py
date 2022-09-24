@@ -22,14 +22,14 @@ tree = app_commands.CommandTree(client)
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
 # 環境設定
-Version = "1.4rb"
+Version = "2.0"
 support_server_link = "https://discord.com/invite/NjBheceZRB"
 invite_link = f"https://discord.com/api/oauth2/authorize?client_id=1008709839683334186&permissions=52304&scope=applications.commands%20bot"
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 loading_emoji = "<a:loading:1011568375748636772>"
 GLOBAL_CH_NAME = "限界やちゃっと"
 GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
-Updatedate = "2022年9月06日"
+Updatedate = "2022年9月24日"
 startnotify_channel = "1010162569799028869"
 genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい","くそ"]
 
@@ -122,8 +122,8 @@ async def updateinfo(interaction: discord.Interaction):
     """アップデート情報を表示するや..."""
     embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}リソース ＞ アップデート情報", description="このBotのアップデート情報を表示するや...", color=0xffffff)
     embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-    embed.add_field(name="バージョン", value="1.4rb", inline=False)
-    embed.add_field(name="更新内容", value="・一部のコマンドの項目を更新\nプレフィックスを変更", inline=False)
+    embed.add_field(name="バージョン", value="2.0", inline=False)
+    embed.add_field(name="更新内容", value="・一部のコマンドの項目を更新\ncalcコマンドの仕様変更\nBrainCheckの追加", inline=False)
     embed.set_footer(text=f"更新日：{Updatedate}")
     await interaction.response.send_message(embed=embed)
 
