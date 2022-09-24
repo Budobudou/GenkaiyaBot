@@ -58,7 +58,7 @@ async def on_ready():
     print("起動しました")
     serversuu = len(client.guilds)
     notify = await client.fetch_channel(startnotify_channel)
-    await notify.send("起動したや...")
+    await notify.send("レガシ コマンドサービスを起動したや...")
 
 @client.command()
 async def google(ctx, memog):
