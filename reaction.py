@@ -49,7 +49,12 @@ async def loop():
                     gencount = 0
                     pickle.dump(gencount, f)
 loop.start()
-
+@client.event
+async def on_ready():
+    startnotify_channel = "1010162569799028869"
+    print("起動しました")
+    notify = await client.fetch_channel(startnotify_channel)
+    await notify.send("グローバルチャット&リアクションサービスを開始したや...")
 @client.event
 async def on_message(message):
     if message.author.bot:
