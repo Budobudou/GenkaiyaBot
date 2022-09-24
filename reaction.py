@@ -2,10 +2,10 @@
 import discord
 import asyncio
 import pickle
-import datetime
 import os
 import sys
 from discord.ext import tasks
+from datetime import datetime
 
 client = discord.Client(intents=discord.Intents.all())
 setting = open('token.txt', 'r').readlines()
