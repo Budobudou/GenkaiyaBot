@@ -128,98 +128,30 @@ async def on_message(message):
 
 @tree.command(name="google")
 async def google(interaction: discord.Interaction, text: str):
-        await interaction.response.send_message(f'**Google検索結果**\nhttps://www.google.com/search?q={text}')
+    """Google検索のURLを表示するや..."""
+    await interaction.response.send_message(f'**Google検索結果**\nhttps://www.google.com/search?q={text}')
        
 @tree.command(name="ping")
 async def ping(interaction: discord.Interaction):
+    """pingを測定するや..."""
     raw_ping = client.latency
     ping = round(raw_ping * 1000)
     await interaction.response.send_message(f"ping値は... \n {str(ping)}msや...！")
-    
-@tree.command(name="exit")
-async def exit(interaction: discord.Interaction):
-    if interaction.user.id == 650349871152496661:
-       await interaction.response.send_message('終了します.....')
-       sys.exit()
-    else:
-        await interaction.response.send_message('eval権限がありませんw', ephemeral=True)
-
-@tree.command(name="eval")
-async def eval(interaction: discord.Interaction, cmd: str):
-        #eval
-        if interaction.user.id == 650349871152496661:
-           await eval(cmd)
-        else:
-            await interaction.response.send_message('eval権限がありませんw', ephemeral=True)
 
 @tree.command(name="invite")
 async def invite(interaction: discord.Interaction):
+    """このBotの招待リンクを表示するや..."""
     #/invite と発言したらメッセージを返す
     await interaction.response.send_message('こちらがこのBotの招待URLや...! https://discord.com/api/oauth2/authorize?client_id=1008709839683334186&permissions=52304&scope=applications.commands%20bot')
 
-@tree.command(name="toolhelp")
-async def toolhelp(interaction: discord.Interaction):
-    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ ユーティリティ", description="便利なユーティリティ達や...", color=0xffffff)
-    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-    embed.add_field(name="/timer <秒数>", value="タイマーをセットするや...", inline=True)
-    embed.add_field(name="/sdlurl <リンク>", value="ダウンロードURL短縮でURLを短縮するや..", inline=True)
-    embed.add_field(name="/shorturl <リンク>", value="is.gdでURLを短縮するや...", inline=True)
-    embed.add_field(name="/calc", value="計算コマンドリストを表示するや...", inline=True)
-    embed.add_field(name="/google <検索ワード>", value="Google検索のURLを表示するや...", inline=True)
-    embed.add_field(name="/ds <検索ワード>", value="Disboardでサーバーを検索するや...", inline=True)
-    embed.add_field(name="/server", value="コマンドを実行したサーバーの情報を表示するや...", inline=True)
-    embed.add_field(name="/user <メンションまたはID>", value="指定したユーザーの情報を表示するや...", inline=True)
-    embed.add_field(name="/getin <ID>", value="他のBotのIDからBotの招待リンクを発行するや...", inline=True)
-    embed.add_field(name="/emoji <カスタム絵文字>", value="カスタム絵文字のURLを取得・表示するや...", inline=True)
-    embed.add_field(name="/say <発言させる文章>", value="Botに代わって任意のメッセージを言うや...", inline=True)
-    embed.add_field(name="/safeweb <URL>", value="そのURLが安全かどうか調べるや...", inline=True)
-    embed.add_field(name="/braincheck <Brainの型番>", value="電子辞書Brainの型番からスペックを表示するや...\n実行例:/braincheck PW-SH2", inline=True)
-    await interaction.response.send_message(embed=embed)
-
-@tree.command(name="playhelp")
-async def playhelp(interaction: discord.Interaction):
-    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ お楽しみ", description="お楽しみや...", color=0xffffff)
-    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-    embed.add_field(name="/janken", value="ジャンケンをするや...", inline=True)
-    embed.add_field(name="/dice", value="サイコロを振って1から6の数値を出すや...", inline=True)
-    embed.add_field(name="/cdice <目数>", value="任意の目数のサイコロを振るや...", inline=True)
-    embed.add_field(name="/cointoss", value="コイントスをするや...", inline=True)
-    embed.add_field(name="/random", value="限界やちゃんの画像をランダムに表示するや...", inline=True)
-    await interaction.response.send_message(embed=embed)
-
-@tree.command(name="resohelp")
-async def resohelp(interaction: discord.Interaction):
-    mem = psutil.virtual_memory()
-    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}\nBot鯖の使用RAM:{mem.percent}%", color=0xffffff)
-    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-    embed.add_field(name="/invite", value="このBotの招待リンクを表示するや...", inline=True)
-    embed.add_field(name="/updateinfo", value="アップデート情報を表示するや...", inline=True)
-    embed.add_field(name="/license", value="ライセンス情報を表示するや...", inline=True)
-    embed.add_field(name="/ping", value="pingを測定するや...", inline=True)
-    embed.add_field(name="限界やちゃんBotの公式サーバー", value=f"[参加する]({support_server_link})", inline=True)
-    embed.set_footer(text=f"更新日：{Updatedate}")
-    await interaction.response.send_message(embed=embed)
-
 @tree.command(name="license")
 async def license(interaction: discord.Interaction):
+    """ライセンス情報を表示するや..."""
     await interaction.response.send_message("限界やちゃんは `Brain Hackers` により、Creative Commons BY-SA 4.0 でライセンスされています。\nhttps://github.com/brain-hackers/README/blob/main/assets.md")
-
-@tree.command(name="update")
-async def update(interaction: discord.Interaction):
-    if str(interaction.user.id) in admins:
-        await interaction.response.send_message('git pull しているんや...')
-        cmd = 'git pull'
-        kekka = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
-        kekka2 = kekka.stdout.read()
-        kekka3 = kekka2.decode("utf-8")
-        await interaction.response.edit_message(f'pullってきたや...\n```\n{kekka3}\n```ちょっと一回寝てくる、おやすみや...')
-        python = sys.executable
-        os.execl(python,python, * sys.argv)
-    else:
-        await interaction.response.send_message("権限がないんや...", ephemeral=True)
 
 @tree.command(name="updateinfo")
 async def updateinfo(interaction: discord.Interaction):
+    """アップデート情報を表示するや..."""
     embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}リソース ＞ アップデート情報", description="このBotのアップデート情報を表示するや...", color=0xffffff)
     embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
     embed.add_field(name="バージョン", value="1.4rb", inline=False)
@@ -227,15 +159,9 @@ async def updateinfo(interaction: discord.Interaction):
     embed.set_footer(text=f"更新日：{Updatedate}")
     await interaction.response.send_message(embed=embed)
 
-@tree.command(name="rehelp")
-async def rehelp(interaction: discord.Interaction):
-    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ 限界リアクション機能について ", description="この機能についての説明や...", color=0xffffff)
-    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
-    embed.add_field(name="**Q**.これは何や...?", value="**A**.限界リアクション機能とは、「無理」「極限」などといった__「限界」に関係する文をリアクションでかわいく見せる__機能のことです。", inline=True)    
-    await interaction.response.send_message(embed=embed)
-
 @tree.command(name="shorturl")
 async def shorturl(interaction: discord.Interaction, url: str):
+    """is.gdでURLを短縮するや..."""
     geturl = f"https://is.gd/create.php?format=simple&format=json&url={url}"
     res = requests.get(geturl)
     json = res.json()
@@ -244,6 +170,7 @@ async def shorturl(interaction: discord.Interaction, url: str):
 
 @tree.command(name="safeweb")
 async def safeweb(interaction: discord.Interaction, url: str):
+    """そのURLが安全かどうか調べるや..."""
     link = f"https://safeweb.norton.com/report/show?url={url}&ulang=jpn"
     r = requests.get(link)
     soup = BeautifulSoup(r.text, 'html.parser')
@@ -263,38 +190,37 @@ async def safeweb(interaction: discord.Interaction, url: str):
 
 @tree.command(name="timer")
 async def timer(interaction: discord.Interaction, timer: int):
+    """タイマーをセットするや..."""
     #/timer
     await interaction.response.send_message(f"タイマーを{timer}秒にセットしたや...")
     await asyncio.sleep(timer)
     reply = f'{interaction.user.mention} {timer}秒経ったや... これ以上待つのは限界や...' # 返信メッセージの作成
     await interaction.channel.send(reply)
 
-@tree.command(name="globalhelp")
-async def globalhelp(interaction: discord.Interaction):
-    # /gc_help       
-    await interaction.response.send_message('・参加するには任意のチャンネルの名前を 限界やちゃっと に設定してください。 \n ・以下の行為は禁止とさせて頂きます。ご了承下さい。 \n 他人を傷つけるような事を発言 \n スパム、荒らし投稿 \n NSFWに繋がる恐れのある画像、発言 \n 宣伝(Bot管理者が許可した物は除く) \n Botに負荷をかける行為 \n セルフBotの使用 \n このような行為が発見された場合規制を行います。ルールを守ってご利用ください。')
-    print('/gc_helpが実行されました。')
-
 @tree.command(name="dice")
 async def dice(interaction: discord.Interaction):
+    """サイコロを振って1から6の数値を出すや..."""
     #dice
     dice = r.randint(1, 6)
     await interaction.response.send_message(f"🎲{dice}や...!")
 
 @tree.command(name="cdice")
 async def cdice(interaction: discord.Interaction, max: int):
+    """任意の目数のサイコロを振るや..."""
     # dice
     dice = r.randint(1, max)
     await interaction.response.send_message(f"🎲{dice}や...!")
 
 @tree.command(name="roulette")
 async def roulette(interaction: discord.Interaction):
+    """ルーレットをするや..."""
     #dice
     roulette = r.randint(1, 100)
     await interaction.response.send_message(f"{roulette}や...!")
 
 @tree.command(name="cointoss")
 async def cointoss(interaction: discord.Interaction):
+    """コイントスをするや..."""
     #cointoss
     cointoss = r.randint(0, 1)
     if cointoss == 1:
@@ -304,6 +230,7 @@ async def cointoss(interaction: discord.Interaction):
 
 @tree.command(name="say")
 async def say(interaction: discord.Interaction, text: str):
+    """Botに代わって任意のメッセージを言うや..."""
     msg = text.replace('@','＠')
     await interaction.response.send_message(msg)
     if "@" in text:
@@ -311,6 +238,7 @@ async def say(interaction: discord.Interaction, text: str):
 
 @tree.command(name="calc")
 async def calc(interaction: discord.Interaction, mode: typing.Optional[str], moto: typing.Optional[int], saki: typing.Optional[int]):
+    """計算コマンドリストを表示するや..."""
     if not mode:
         await interaction.response.send_message('🥽四則演算コマンドリスト \n コマンドの使用例(足し算の場合):/calc + 99 1 \n >計算結果：100 \n ======== \n /calc + 足し算 \n /calc- 引き算 \n /calc * 掛け算  \n /calc / 割り算 \n /calc . 小数点以下切り捨ての割り算 \n /calc % 割り算あまり')
     else:
@@ -341,17 +269,20 @@ async def calc(interaction: discord.Interaction, mode: typing.Optional[str], mot
 
 @tree.command(name="embed")
 async def embed(interaction: discord.Interaction, title: str, description: str):
+    """埋め込みを送信するや..."""
     embed=discord.Embed(title=title, description=description)
     await interaction.response.send_message(embed=embed)
 
 @tree.command(name="ds")
 async def ds(interaction: discord.Interaction, text: str):
+    """Disboardでサーバーを検索するや..."""
     #ds
     ds1 = text.replace('@','＠')
     await interaction.response.send_message(f"https://disboard.org/ja/search?keyword={text}")
 
 @tree.command(name="getin")
 async def getin(interaction: discord.Interaction, id: str):
+    """他のBotのIDからBotの招待リンクを発行するや..."""
     #/getinvitelink
     if interaction.message.mentions:
         return
@@ -362,6 +293,7 @@ async def getin(interaction: discord.Interaction, id: str):
 
 @tree.command(name="user")
 async def user(interaction: discord.Interaction, user: discord.Member):
+    """コマンドを実行したサーバーの情報を表示するや..."""
     #userinfo
     embed = discord.Embed(title=f"{user.name}の情報", color=0xffffff)
     embed.set_thumbnail(url=user.avatar)
@@ -378,6 +310,7 @@ async def user(interaction: discord.Interaction, user: discord.Member):
 
 @tree.command(name="server")
 async def server(interaction: discord.Interaction):
+    """コマンドを実行したサーバーの情報を表示するや..."""
     #userinfo
     guild = interaction.guild
     embed = discord.Embed(title=f"{guild}の情報", color=0xffffff)
@@ -397,20 +330,23 @@ async def server(interaction: discord.Interaction):
 
 @tree.command(name="sdlurl")
 async def sdlurl(interaction: discord.Interaction, url: str):
-       #surl
-        udrl = f'https://s.kantantools.com/api/v2/action/shorten?url={url}'
-        response = requests.get(udrl)
-        dlk = response.text
-        await interaction.response.send_message(f"{dlk}\nファイルのダウンロードリンクを短縮しました！")
+    """ダウンロードURL短縮でURLを短縮するや.."""
+    #surl
+    udrl = f'https://s.kantantools.com/api/v2/action/shorten?url={url}'
+    response = requests.get(udrl)
+    dlk = response.text
+    await interaction.response.send_message(f"{dlk}\nファイルのダウンロードリンクを短縮しました！")
 
 @tree.command(name="urlunzip")
 async def urlunzip(interaction: discord.Interaction, url: str):
+    """短縮したURLを元に戻すや..."""
     #unzip
     anzip = requests.get(url).url
     await interaction.response.send_message(anzip)
 
 @tree.command(name="emoji")
 async def emoji(interaction: discord.Interaction, emoji: str):
+    """カスタム絵文字のURLを取得・表示するや..."""
     match = re.match('^<:.+:([0-9]+)>', emoji) or re.match('^<a:.+:([0-9]+)>', emoji)
     if not match:
         return await interaction.response.send_message("これはカスタム絵文字ではないかもしれないんや...")
@@ -421,26 +357,15 @@ async def emoji(interaction: discord.Interaction, emoji: str):
 
 @tree.command(name="random")
 async def random(interaction: discord.Interaction):
+    """限界やちゃんの画像をランダムに表示するや..."""
     df = pd.read_csv('genkaiya.csv')
     images = df['url']
     image_url = r.choice(images)
     await interaction.response.send_message(image_url)
 
-@tree.command(name="shell")
-async def shell(interaction: discord.Interaction, cmd: str):
-    if str(interaction.user.id) in admins:
-        if 'token.txt' in cmd:
-            await interaction.response.send_message('このファイルはここでは操作できないや...')
-        else:
-            kekka = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
-            kekka2 = kekka.stdout.read()
-            kekka3 = kekka2.decode("utf-8")
-            await interaction.response.send_message(f'```\n{kekka3}\n```')
-    else:
-        await interaction.response.send_message('権限がないんや...', ephemeral=True)
-
 @tree.command(name="braincheck")
 async def braincheck(interaction: discord.Interaction, kishu: str):
+    """電子辞書Brainの型番からスペックを表示するや..."""
     file = './brains.csv'
     atta = 0
     search = kishu.upper()
@@ -483,6 +408,7 @@ async def braincheck(interaction: discord.Interaction, kishu: str):
 
 @tree.command(name="janken")
 async def janken(interaction: discord.Interaction):
+    """ジャンケンをするや..."""
     #じゃんけん
     await interaction.response.send_message("最初はグー、じゃんけん ※ぐー、ちょき、ぱー、の中から発言してや...")
 
@@ -520,6 +446,7 @@ async def janken(interaction: discord.Interaction):
 
 @tree.command(name="help")
 async def help(interaction: discord.Interaction):
+    """ヘルプを表示するや..."""
     embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ", description="コマンド種類別にヘルプをまとめたや...", color=0xffffff)
     embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
     embed.add_field(name="限界リアクション機能について", value="/rehelp", inline=True)
@@ -530,6 +457,67 @@ async def help(interaction: discord.Interaction):
     embed.add_field(name="ライセンス情報", value="/license", inline=True)
     embed.set_footer(text=f"バージョン {Version}")
     await interaction.response.send_message(embed=embed)
+
+@tree.command(name="toolhelp")
+async def toolhelp(interaction: discord.Interaction):
+    """ユーティリティ"""
+    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ ユーティリティ", description="便利なユーティリティ達や...", color=0xffffff)
+    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+    embed.add_field(name="/timer <秒数>", value="タイマーをセットするや...", inline=True)
+    embed.add_field(name="/sdlurl <リンク>", value="ダウンロードURL短縮でURLを短縮するや..", inline=True)
+    embed.add_field(name="/shorturl <リンク>", value="is.gdでURLを短縮するや...", inline=True)
+    embed.add_field(name="/calc", value="計算コマンドリストを表示するや...", inline=True)
+    embed.add_field(name="/google <検索ワード>", value="Google検索のURLを表示するや...", inline=True)
+    embed.add_field(name="/ds <検索ワード>", value="Disboardでサーバーを検索するや...", inline=True)
+    embed.add_field(name="/server", value="コマンドを実行したサーバーの情報を表示するや...", inline=True)
+    embed.add_field(name="/user <メンションまたはID>", value="指定したユーザーの情報を表示するや...", inline=True)
+    embed.add_field(name="/getin <ID>", value="他のBotのIDからBotの招待リンクを発行するや...", inline=True)
+    embed.add_field(name="/emoji <カスタム絵文字>", value="カスタム絵文字のURLを取得・表示するや...", inline=True)
+    embed.add_field(name="/say <発言させる文章>", value="Botに代わって任意のメッセージを言うや...", inline=True)
+    embed.add_field(name="/safeweb <URL>", value="そのURLが安全かどうか調べるや...", inline=True)
+    embed.add_field(name="/braincheck <Brainの型番>", value="電子辞書Brainの型番からスペックを表示するや...\n実行例:/braincheck PW-SH2", inline=True)
+    await interaction.response.send_message(embed=embed)
+
+@tree.command(name="playhelp")
+async def playhelp(interaction: discord.Interaction):
+    """お楽しみ"""
+    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ お楽しみ", description="お楽しみや...", color=0xffffff)
+    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+    embed.add_field(name="/janken", value="ジャンケンをするや...", inline=True)
+    embed.add_field(name="/dice", value="サイコロを振って1から6の数値を出すや...", inline=True)
+    embed.add_field(name="/cdice <目数>", value="任意の目数のサイコロを振るや...", inline=True)
+    embed.add_field(name="/cointoss", value="コイントスをするや...", inline=True)
+    embed.add_field(name="/random", value="限界やちゃんの画像をランダムに表示するや...", inline=True)
+    await interaction.response.send_message(embed=embed)
+
+@tree.command(name="resohelp")
+async def resohelp(interaction: discord.Interaction):
+    """リソース"""
+    mem = psutil.virtual_memory()
+    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ リソース", description=f"導入サーバー数：{len(client.guilds)}\nBot鯖の使用RAM:{mem.percent}%", color=0xffffff)
+    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+    embed.add_field(name="/invite", value="このBotの招待リンクを表示するや...", inline=True)
+    embed.add_field(name="/updateinfo", value="アップデート情報を表示するや...", inline=True)
+    embed.add_field(name="/license", value="ライセンス情報を表示するや...", inline=True)
+    embed.add_field(name="/ping", value="pingを測定するや...", inline=True)
+    embed.add_field(name="限界やちゃんBotの公式サーバー", value=f"[参加する]({support_server_link})", inline=True)
+    embed.set_footer(text=f"更新日：{Updatedate}")
+    await interaction.response.send_message(embed=embed)
+
+@tree.command(name="rehelp")
+async def rehelp(interaction: discord.Interaction):
+    """限界リアクション機能について"""
+    embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}コマンド一覧 ＞ 限界リアクション機能について ", description="この機能についての説明や...", color=0xffffff)
+    embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+    embed.add_field(name="**Q**.これは何や...?", value="**A**.限界リアクション機能とは、「無理」「極限」などといった__「限界」に関係する文をリアクションでかわいく見せる__機能のことです。", inline=True)    
+    await interaction.response.send_message(embed=embed)
+
+@tree.command(name="globalhelp")
+async def globalhelp(interaction: discord.Interaction):
+    """グローバルチャット"""
+    # /gc_help       
+    await interaction.response.send_message('・参加するには任意のチャンネルの名前を 限界やちゃっと に設定してください。 \n ・以下の行為は禁止とさせて頂きます。ご了承下さい。 \n 他人を傷つけるような事を発言 \n スパム、荒らし投稿 \n NSFWに繋がる恐れのある画像、発言 \n 宣伝(Bot管理者が許可した物は除く) \n Botに負荷をかける行為 \n セルフBotの使用 \n このような行為が発見された場合規制を行います。ルールを守ってご利用ください。')
+    print('/gc_helpが実行されました。')
 
 #@tree.command(name="add")
 #async def add(interaction: discord.Interaction):
