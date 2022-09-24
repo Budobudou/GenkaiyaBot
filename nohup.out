@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/nekokawa/Documents/GenkaiyaBot/reaction.py", line 50, in <module>
+    loop.start()
+  File "/Users/nekokawa/.pyenv/versions/3.10.0/lib/python3.10/site-packages/discord/ext/tasks/__init__.py", line 398, in start
+    self._task = asyncio.create_task(self._loop(*args, **kwargs))
+  File "/Users/nekokawa/.pyenv/versions/3.10.0/lib/python3.10/asyncio/tasks.py", line 336, in create_task
+    loop = events.get_running_loop()
+RuntimeError: no running event loop
+sys:1: RuntimeWarning: coroutine 'Loop._loop' was never awaited
+[2022-09-24 17:42:03] [INFO    ] discord.client: logging in using static token
+[2022-09-24 17:42:04] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 07715f9f101d0131999bb468fa9f977a).
+sh: line 1: 61199 Terminated: 15          python3 slash.py
+sh: line 1: 61555 Terminated: 15          python3 rest.py

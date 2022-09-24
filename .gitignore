@@ -6,3 +6,5 @@ user.txt
 gencount.pickle
 # headless-chromium-binary
 headless-chromium
+#admin
+admin.txt
