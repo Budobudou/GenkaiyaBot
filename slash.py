@@ -46,7 +46,7 @@ async def on_ready():
     await client.change_presence(activity=discord.Game(name=r.choice(("限界リアクション",f"現在、{serversuu}サーバーにいるや...","コマンド一覧の表示は/helpを入力してや...","/randomと打ってみてや...","「限界や」と言ってみてや..."))
 ))
     notify = await client.fetch_channel(startnotify_channel)
-    await notify.send("起動したや...")
+    await notify.send("スラッシュコマンド サービス起動したや...")
 #関数
 async def create_channel(message, channel_name):
     category_id = message.channel.category_id
