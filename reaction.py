@@ -6,7 +6,8 @@ import os
 import sys
 from discord.ext import tasks
 from datetime import datetime
-
+GLOBAL_CH_NAME = "限界やちゃっと"
+GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
 client = discord.Client(intents=discord.Intents.all())
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
@@ -79,5 +80,37 @@ async def on_message(message):
                 pickle.dump(gencount, f)
                 print(gencount)
             break
-
+    if message.channel.name == GLOBAL_CH_NAME:
+        channels = client.get_all_channels()
+        global_channels = [ch for ch in channels if ch.name == GLOBAL_CH_NAME]
+        try:
+           await message.add_reaction(loading_emoji)
+        except:pass
+        for channel in global_channels:
+            if channel.id == message.channel.id:continue
+            try:
+              ch_webhooks = await channel.webhooks()
+            except discord.errors.Forbidden:continue
+            if ch_webhooks == []:
+                try:webhook = await channel.create_webhook(name=GLOBAL_WEBHOOK_NAME, reason=f"{GLOBAL_CH_NAME}の為にwebhook作成したや...")
+                except:continue
+            else:
+                webhook = ch_webhooks[0]
+                content = message.content.replace("@", "＠")
+                if content == "":content = "メッセージ内容がありません"
+                for attachment in message.attachments:
+                    content = content + "\n" + attachment.url
+                try:
+                    await webhook.send(content=content,
+                        username=f"{message.author} from {message.guild}",
+                        avatar_url=message.author.avatar_url_as(format="png"),
+                        embed=message.embeds[0])
+                except:
+                    await webhook.send(content=content,
+                        username=f"{message.author} from {message.guild}",
+                        avatar_url=message.author.avatar_url_as(format="png"))
+            try:
+                await message.remove_reaction(loading_emoji, message.guild.me)
+                await message.add_reaction("✅")
+            except:pass
 client.run(Token)
