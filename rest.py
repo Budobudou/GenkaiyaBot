@@ -140,16 +140,6 @@ async def on_message(message):
     #mension
     elif client.user in message.mentions: # 話しかけられたかの判定
         await reply2(message) # 返信する非同期関数を実行
-    for word in genkaiwordlist:
-        if word in message.content:
-            await message.add_reaction(Genkaiya_emoji)
-            with open("gencount.pickle","wb") as f:
-                global gencount
-                gencount += 1
-                pickle.dump(gencount, f)
-                print(gencount)
-        else:
-            break
     if message.author.bot or message.author.discriminator == "0000":
         return
     user_data_text = open('user.txt', 'r')
@@ -166,7 +156,15 @@ async def on_message(message):
             if user_id == int(data[1]):
                 await message.add_reaction(Genkaiya_emoji)
         count += 1
-    if message.author.discriminator == "0000":return
+    for word in genkaiwordlist:
+        if word in message.content:
+            await message.add_reaction(Genkaiya_emoji)
+            with open("gencount.pickle","wb") as f:
+                global gencount
+                gencount += 1
+                pickle.dump(gencount, f)
+                print(gencount)
+            break
     if message.channel.name == GLOBAL_CH_NAME:
         channels = client.get_all_channels()
         global_channels = [ch for ch in channels if ch.name == GLOBAL_CH_NAME]
