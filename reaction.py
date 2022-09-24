@@ -13,7 +13,7 @@ setting = open('token.txt', 'r').readlines()
 Token = setting[0]
 Genkaiya_emoji = "<:genkaiya:1003377706521600042>"
 genkaiwordlist = ["限界","げんかい","limit","極限","無理","極限","ダメ","駄目","genkai","文鎮","壊れ","ゴミだ","つらい","くそ"]
-
+loading_emoji = "<a:loading:1011568375748636772>"
 global gencount
 # 限界カウンター Start
 try:
