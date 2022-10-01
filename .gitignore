@@ -8,3 +8,5 @@ gencount.pickle
 headless-chromium
 #admin
 admin.txt
+#NGワードファイル
+nglist.pickle
