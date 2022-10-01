@@ -5,6 +5,7 @@ import asyncio
 import pickle
 import os
 import sys
+import re
 from discord.ext import tasks
 from datetime import datetime
 GLOBAL_CH_NAME = "限界やちゃっと"
@@ -92,10 +93,14 @@ async def on_message(message):
     if message.author.discriminator == "0000":return
     if message.channel.name == GLOBAL_CH_NAME:
         ngtest = 0
+        ngcheck1 = message.content.replace('　', '')
+        ngcheck2 = ngcheck1.replace(' ', '')
+        ngcheck3 = ngcheck2.replace('ー', '')
         for word in ngwords:
-            if word in message.content:
+            if word in ngcheck3:
                 ngtest = 1
                 break
+            
         if ngtest == 1:
             embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したので処理を停止したや...", color=0xffffff)
             embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
