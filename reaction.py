@@ -1,5 +1,6 @@
 #Discord.py v1.7
 import discord
+import pickle
 import asyncio
 import pickle
 import os
@@ -8,6 +9,9 @@ from discord.ext import tasks
 from datetime import datetime
 GLOBAL_CH_NAME = "限界やちゃっと"
 GLOBAL_WEBHOOK_NAME = "genkaichat-Webhook"
+ngwords = {}
+with open("nglist.pickle", mode="rb") as f:
+    ngwords = pickle.load(f)
 client = discord.Client(intents=discord.Intents.all())
 setting = open('token.txt', 'r').readlines()
 Token = setting[0]
@@ -87,6 +91,18 @@ async def on_message(message):
             break
     if message.author.discriminator == "0000":return
     if message.channel.name == GLOBAL_CH_NAME:
+        ngtest = 0
+        for word in ngwords:
+            if word in message.content:
+                ngtest = 1
+                break
+        if ngtest == 1:
+            embed=discord.Embed(title=f"限界やちゃんBot{Genkaiya_emoji}エラー", description="エラーが発生したので処理を停止したや...", color=0xffffff)
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            embed.set_thumbnail(url="https://i.gyazo.com/126fb5f6de8c78c3c139f97d5cd8c0bf.png")
+            embed.add_field(name="詳細や...", value=f"グローバルチャットでは使用できない言葉が含まれています。", inline=False)
+            await message.reply(embed=embed)
+            return
         channels = client.get_all_channels()
         global_channels = [ch for ch in channels if ch.name == GLOBAL_CH_NAME]
         try:
