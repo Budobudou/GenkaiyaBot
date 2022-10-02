@@ -98,8 +98,9 @@ async def on_message(message):
         ngcheck2 = ngcheck1.replace(' ', '')
         ngcheck3 = ngcheck2.replace('ー', '')
         ngcheck4 = jaconv.kata2hira(ngcheck3)
+        ngcheck5 = ngcheck4.lower()
         for word in ngwords:
-            if word in ngcheck4:
+            if word in ngcheck5:
                 ngtest = 1
                 break
             
