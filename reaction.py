@@ -100,7 +100,7 @@ async def on_message(message):
         ngcheck4 = jaconv.kata2hira(ngcheck3)
         ngcheck5 = ngcheck4.lower()
         ngcheck6 = ngcheck5.replace('～', '')
-        ngcheck7 = ngcheck6.replace("\n", ""))
+        ngcheck7 = ngcheck6.replace("\n", "")
         for word in ngwords:
             if word in ngcheck7:
                 ngtest = 1
