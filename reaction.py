@@ -101,8 +101,9 @@ async def on_message(message):
         ngcheck5 = ngcheck4.lower()
         ngcheck6 = ngcheck5.replace('～', '')
         ngcheck7 = ngcheck6.replace("\n", "")
+        ngcheck8 = ngcheck7.replace("ㅤ", "")
         for word in ngwords:
-            if word in ngcheck7:
+            if word in ngcheck8:
                 ngtest = 1
                 break
             
